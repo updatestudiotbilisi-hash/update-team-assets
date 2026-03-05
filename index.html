@@ -2291,28 +2291,40 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// MUSIC PLAYER — autoplay on load, button toggles pause/resume
+// MUSIC PLAYER — starts on first any interaction if autoplay blocked
 (function() {
   var audio = document.getElementById('music-audio');
   var btn   = document.getElementById('music-btn');
   if (!audio || !btn) return;
 
   audio.volume = 0.35;
+  var started = false;
 
-  // Try autoplay immediately
-  function tryPlay() {
-    var p = audio.play();
-    if (p !== undefined) {
-      p.catch(function() {
-        // Autoplay blocked — wait for first user interaction
-        document.addEventListener('click', function resume() {
-          audio.play();
-          document.removeEventListener('click', resume);
-        }, { once: true });
-      });
-    }
+  function startMusic() {
+    if (started) return;
+    audio.play().then(function() {
+      started = true;
+      removeListeners();
+    }).catch(function() {});
   }
-  tryPlay();
+
+  var events = ['click', 'touchstart', 'scroll', 'keydown', 'mousemove'];
+
+  function removeListeners() {
+    events.forEach(function(e) {
+      document.removeEventListener(e, startMusic);
+    });
+  }
+
+  // Try immediately (works if user came from same site)
+  audio.play().then(function() {
+    started = true;
+  }).catch(function() {
+    // Blocked — fire on first interaction of any kind
+    events.forEach(function(e) {
+      document.addEventListener(e, startMusic, { once: true, passive: true });
+    });
+  });
 })();
 
 function toggleMusic() {
