@@ -1,0 +1,2336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPDATE — massage & wellness · Tbilisi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  /* ===== CUSTOM FONTS ===== */
+  @font-face {
+    font-family: 'Gropled';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/Gropled-Bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'GropledHollow';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/Gropled%20Hollow.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Circe';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/circe-thin.woff2') format('woff2');
+    font-weight: 100; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Circe';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/circe-extralight.woff2') format('woff2');
+    font-weight: 200; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Circe';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/circe-light.woff2') format('woff2');
+    font-weight: 300; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Circe';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/circe.woff2') format('woff2');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Circe';
+    src: url('https://updatestudiotbilisi-hash.github.io/update-team-assets/fonts/circe-bold.woff2') format('woff2');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+</style>
+
+<style>
+  :root {
+    --beige: #EBEBE1;
+    --green-beige: #7D7D64;
+    --khaki: #32321E;
+    --khaki-light: #3e3e28;
+    --orange: #FF5A00;
+    --salmon: #FF9155;
+    --dark-green: #414632;
+    --mid-green: #5A5F41;
+    --font-h:      'Gropled', 'Gill Sans', sans-serif;
+    --font-sub:   'Gropled', 'Gill Sans', sans-serif;
+    --font-update: 'Cormorant Garamond', 'Gropled', sans-serif;
+    --font-hollow: 'GropledHollow', 'Gropled', sans-serif;
+    --font-body: 'Circe', 'Gill Sans', Optima, sans-serif;
+    --tr: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Semantic theme tokens */
+    --bg-primary:   #111110;
+    --bg-secondary: #111110;
+    --bg-alt:       #111110;
+    --text-main:    #FFFFFF;
+    --text-muted:   #EBEBE1;
+    --text-dark:    #FFFFFF;
+    --border:       rgba(255,255,255,0.12);
+    --card-bg:      rgba(255,255,255,0.06);
+    --card-border:  transparent;
+    --nav-bg:       rgba(15,15,14,0.96);
+    --mob-menu-bg:  rgba(12,12,11,0.99);
+    --shadow:       rgba(0,0,0,0.35);
+  }
+
+  /* ===== LIGHT THEME ===== */
+  [data-theme="light"] {
+    --bg-primary:   #FAFAF8;
+    --bg-secondary: #FAFAF8;
+    --bg-alt:       #FAFAF8;
+    --text-main:    #000000;
+    --text-muted:   #32321E;
+    --text-dark:    #32321E;
+    --border:       rgba(50,50,30,0.12);
+    --card-bg:      #FFFFFF;
+    --card-border:  transparent;
+    --nav-bg:       rgba(255,255,255,0.97);
+    --mob-menu-bg:  rgba(255,255,255,0.99);
+    --shadow:       rgba(50,50,30,0.08);
+    --green-beige:  #666655;
+    --beige:        #000000;
+    --khaki:        #32321E;
+    --mid-green:    #EBEBE1;
+    --orange:       #FF5A00;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-main); overflow-x: hidden; line-height: 1.7; transition: background 0.4s ease, color 0.4s ease; }
+  a { text-decoration: none; color: inherit; }
+  [data-lang] { display: none; }
+  [data-lang].active { display: inline; }
+  div[data-lang].active { display: block; }
+  p[data-lang].active { display: block; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; height: 64px;
+    background: var(--nav-bg); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    gap: 16px; transition: background 0.4s ease, border-color 0.4s ease;
+  }
+  .nav-logo {
+    font-family: var(--font-update); font-size: 1.2rem; letter-spacing: 0.3em;
+    color: var(--text-main); text-transform: uppercase; font-weight: 400;
+    flex-shrink: 0; display: flex; flex-direction: column; gap: 1px;
+  }
+  .nav-logo small { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.48rem; letter-spacing: 0.32em; color: var(--text-muted); }
+  .nav-center { display: flex; align-items: center; gap: 24px; flex: 1; justify-content: center; }
+  .nav-link {
+    font-size: 0.7rem; letter-spacing: 0.12em; color: var(--text-muted);
+    text-transform: uppercase; cursor: pointer; transition: color 0.3s;
+    background: none; border: none; font-family: var(--font-body); white-space: nowrap;
+  }
+  .nav-link:hover { color: var(--text-main); }
+  /* right side: lang + book — always visible, stuck to right */
+  .nav-right { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  .lang-btn {
+    font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.14em;
+    padding: 5px 9px; border: 1px solid var(--border); border-radius: 2px;
+    color: var(--text-muted); cursor: pointer; background: transparent; transition: var(--tr); text-transform: uppercase;
+  }
+  .lang-btn:hover, .lang-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .nav-book {
+    font-family: var(--font-body); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 9px 20px; background: var(--orange); color: #fff; border: none; cursor: pointer;
+    transition: var(--tr); white-space: nowrap; margin-left: 4px;
+  }
+  .nav-book:hover { opacity: 0.9; }
+
+  /* ===== THEME TOGGLE ===== */
+  .theme-toggle {
+    width: 44px; height: 24px; border-radius: 12px; border: 1.5px solid var(--border);
+    background: var(--card-bg); cursor: pointer; position: relative;
+    transition: var(--tr); flex-shrink: 0; padding: 0;
+  }
+  .theme-toggle::after {
+    content: ''; position: absolute; top: 3px; left: 3px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--text-muted);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s;
+  }
+  [data-theme="light"] .theme-toggle::after {
+    transform: translateX(20px); background: var(--orange);
+  }
+  .theme-toggle-wrap { display: flex; align-items: center; gap: 7px; margin-left: 4px; }
+  .theme-toggle-label { font-size: 0.56rem; letter-spacing: 0.14em; color: var(--text-muted); text-transform: uppercase; white-space: nowrap; transition: color 0.3s; }
+
+  /* ===== LIGHT THEME SECTION + COMPONENT OVERRIDES ===== */
+  [data-theme="light"] #problem       { background: #FAFAF8; }
+  [data-theme="light"] #prices        { background: #FAFAF8; }
+  [data-theme="light"] #approach      { background: #FAFAF8; }
+  [data-theme="light"] #loss          { background: #FAFAF8; }
+  [data-theme="light"] #cta-final     { background: #FAFAF8; }
+  [data-theme="light"] #reviews       { background: #FAFAF8; }
+  [data-theme="light"] #services      { background: #FAFAF8; }
+  [data-theme="light"] #pleasure      { background: #FAFAF8; }
+  [data-theme="light"] footer         { background: #F0EFE8; }
+  [data-theme="light"] #team          { background: #FAFAF8; }
+
+  [data-theme="light"] .prob-card     { background: #FAFAF8; box-shadow: none; border: 1px solid rgba(50,50,30,0.08); }
+  [data-theme="light"] .svc-card      { background: #FAFAF8; border: 1px solid rgba(50,50,30,0.07); }
+  [data-theme="light"] .spec-card     { background: #FFFFFF; }
+  [data-theme="light"] .pv-block      { background: #FFFFFF; }
+  [data-theme="light"] .gift-box      { background: rgba(50,50,30,0.04); }
+  [data-theme="light"] .btn-dark      { background: #1A1A10; color: #FFFFFF; }
+  [data-theme="light"] .rev-card      { background: rgba(50,50,30,0.04); }
+  
+  [data-theme="light"] .team-card     { background: transparent; border: none; }
+  [data-theme="light"] .team-desc-fade { background: linear-gradient(to bottom, transparent, #FAFAF8); }
+  [data-theme="light"] .mobile-menu   { background: rgba(255,255,255,0.99); }
+  [data-theme="light"] .mobile-menu a { border-bottom-color: rgba(20,20,10,0.07); }
+  [data-theme="light"] footer .f-logo    { color: #32321E; }
+  [data-theme="light"] footer .f-tag     { color: #6A6A50; }
+  [data-theme="light"] footer .foot-brand p { color: #6A6A50; }
+  [data-theme="light"] footer .foot-col h5  { color: #32321E; }
+  [data-theme="light"] footer .foot-col a   { color: #6A6A50; }
+  [data-theme="light"] footer .foot-col a:hover { color: var(--orange); }
+  [data-theme="light"] footer .foot-bot span { color: #8A8A70; }
+  [data-theme="light"] footer .soc-link  { border-color: rgba(50,50,30,0.18); color: #6A6A50; }
+  [data-theme="light"] footer .foot-bot  { border-top-color: rgba(50,50,30,0.12); }
+  [data-theme="light"] #nudge        { background: #FAFAF8; }
+  [data-theme="light"] #nudge .nudge-quote { color: #1A1A10; }
+  [data-theme="light"] #nudge .nudge-quote::before { opacity: 0.07; }
+  [data-theme="light"] .nudge-img-wrap { opacity: 0.12; }
+  [data-theme="light"] .rev-ambient img { filter: grayscale(30%); }
+  
+  
+  
+  
+  [data-theme="light"] .rev-card:hover { background: rgba(50,50,30,0.08); transform: translateY(-3px); }
+  [data-theme="light"] .pv-block { background: #EBEBE1; }
+  [data-theme="light"] .pv-block:first-child { background: rgba(50,50,30,0.09); }
+
+
+
+  /* ===== DARK THEME COLOR FIXES (palette requested) ===== */
+  /* Dark theme is default (or data-theme="dark") */
+  /* services color handled in base CSS */
+  html:not([data-theme="light"]) .prob-text p,
+  html:not([data-theme="light"]) .pleas-text .s-h,
+  html:not([data-theme="light"]) .pleas-text p,
+  html:not([data-theme="light"]) .btn-ghost-dark,
+  html:not([data-theme="light"]) #cta-final .s-h,
+  html:not([data-theme="light"]) .fin-sub {
+    color: var(--text-main);
+  }
+  html:not([data-theme="light"]) .team-head .s-h { color: var(--text-main) !important; }
+
+  /* ===== SHARED ===== */
+  section { position: relative; overflow: hidden; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+  .s-label { font-family: 'Circe', sans-serif; font-weight: 400; font-size: 0.68rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; display: block; }
+  .s-h { font-family: var(--font-h); font-weight: 400; font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.15; margin-bottom: 18px; }
+  .s-h.light { color: var(--text-main); }
+  .s-h.dark { color: var(--text-dark); }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.85s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.85s cubic-bezier(0.25,0.46,0.45,0.94); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ===== HERO ===== */
+  #hero {
+    min-height: 100vh; background: var(--bg-primary); isolation: isolate;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; padding: 120px 40px 80px; position: relative; overflow: hidden;
+  }
+  #hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 160px;
+    background: linear-gradient(to bottom, transparent, var(--bg-primary));
+    pointer-events: none; z-index: 1;
+  }
+  #hero > *:not(canvas) { position: relative; z-index: 2; }
+  section, header, footer, .sticky-book, .mobile-menu, .photo-strip { position: relative; z-index: 1; }
+  #hero-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999; mix-blend-mode: screen; }
+  #light-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 999; mix-blend-mode: multiply; display: none; }
+  [data-theme="light"] #hero-canvas  { display: none; }
+  [data-theme="light"] #light-canvas { display: block; }
+
+  /* Sphere glow animation (fallback CSS) */
+  @keyframes spherePulse {
+    0%, 100% { transform: scale(1) translate(-50%,-50%); opacity: 0.55; }
+    33%       { transform: scale(1.12) translate(-46%,-53%); opacity: 0.7; }
+    66%       { transform: scale(0.92) translate(-54%,-47%); opacity: 0.5; }
+  }
+  @keyframes sphereFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-18px); }
+  }
+  .hero-orn { font-size: 0.6rem; letter-spacing: 0.4em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 18px; opacity:0; animation: fadeUp .8s ease forwards .2s; }
+  .hero-title { font-family: var(--font-update); font-size: clamp(4.5rem, 13vw, 10rem); font-weight: 300; letter-spacing: 0.18em; color: var(--text-main); line-height: .9; text-transform: uppercase; opacity:0; animation: fadeUp .9s ease forwards .4s; }
+  .hero-subtitle { font-size: 0.6rem; letter-spacing: 0.42em; color: var(--text-muted); text-transform: uppercase; margin: 16px 0 44px; opacity:0; animation: fadeUp .8s ease forwards .6s; }
+  .hero-tag { font-family: 'Gropled', sans-serif; font-style: normal; font-size: clamp(1.2rem, 2.8vw, 1.75rem); color: var(--text-main); max-width: 640px; line-height: 1.55; opacity:0; animation: fadeUp .9s ease forwards .8s; margin-bottom: 16px; letter-spacing: -0.01em; }
+  .hero-desc { font-size: 0.86rem; color: var(--green-beige); max-width: 460px; line-height: 1.88; opacity:0; animation: fadeUp .8s ease forwards 1s; margin-bottom: 28px; }
+  .hero-services { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; opacity:0; animation: fadeUp .8s ease forwards 1.05s; margin-bottom: 12px; }
+  .hero-pill { font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.1em; padding: 8px 20px; border: 1px solid var(--border); border-radius: 100px; color: var(--text-main); background: var(--card-bg); backdrop-filter: blur(4px); transition: var(--tr); white-space: nowrap; cursor: pointer; text-decoration: none; display: inline-block; }
+  .hero-pill:hover { background: rgba(255,90,0,0.15); border-color: rgba(255,90,0,0.5); color: var(--salmon); }
+
+  /* ===== HAMBURGER MOBILE MENU ===== */
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-main); transition: var(--tr); border-radius: 2px; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu {
+    display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 1100;
+    background: var(--mob-menu-bg); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 20px 24px 28px;
+    transform: translateY(-12px); opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  .mobile-menu.open { display: flex; transform: translateY(0); opacity: 1; pointer-events: all; }
+  .mobile-menu a { font-family: var(--font-body); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); padding: 13px 0; border-bottom: 1px solid rgba(235,235,225,0.07); transition: color 0.2s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--orange); }
+  .mobile-menu .mob-book { margin-top: 16px; text-align: center; padding: 13px; background: var(--orange); color: #fff !important; border: none !important; border-radius: 0; font-size: 0.72rem; letter-spacing: 0.2em; }
+  .hero-cause { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.04rem; font-style: normal; color: var(--text-muted); opacity:0; animation: fadeUp .8s ease forwards 1.1s; margin-bottom: 40px; max-width: 520px; line-height: 1.48; }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; opacity:0; animation: fadeUp .8s ease forwards 1.2s; }
+  .btn-orange { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 42px; background: var(--orange); color: #fff; border: none; cursor: pointer; transition: var(--tr); position: relative; overflow: hidden; }
+  .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(255,90,0,0.45); opacity: 0.92; }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 42px; background: transparent; color: var(--text-main); border: 1px solid rgba(255,255,255,0.22); cursor: pointer; transition: var(--tr); }
+  .btn-ghost:hover { border-color: var(--orange); color: var(--orange); }
+  .btn-dark { display: inline-block; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 13px 36px; background: var(--bg-alt); color: var(--text-main); transition: var(--tr); }
+  .btn-dark:hover { background: var(--orange); transform: translateY(-2px); }
+  .hero-scroll { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 7px; opacity:0; animation: fadeUp .8s ease forwards 1.6s; }
+  .hero-scroll span { font-size: 0.56rem; letter-spacing: 0.24em; color: var(--text-muted); text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 42px; background: linear-gradient(to bottom, var(--orange), transparent); animation: sp 2s ease-in-out infinite; }
+  @keyframes sp { 0%,100%{opacity:.4}50%{opacity:1} }
+  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+  /* ===== PROBLEM ===== */
+  #problem { background: var(--bg-secondary); color: var(--text-main); padding: 96px 0; }
+  .prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-top: 52px; }
+  .prob-text p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.1rem; line-height: 1.52; margin-bottom: 14px; color: var(--khaki); }
+  .prob-list { list-style: none; margin-top: 24px; }
+  .prob-list li { display: flex; align-items: flex-start; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(50,50,30,0.1); font-size: 0.9rem; }
+  .prob-list li:last-child { border-bottom: none; }
+  .dot { width: 5px; height: 5px; background: var(--orange); border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+  .prob-cards { display: flex; flex-direction: column; gap: 14px; }
+  .prob-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 26px 26px 26px 30px; position: relative; }
+  .prob-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--orange); }
+  .prob-card h4 { font-family: var(--font-h); font-size: 1.22rem; color: var(--beige); margin-bottom: 7px; font-weight: 400; }
+  .prob-card p { font-size: 0.8rem; color: var(--green-beige); line-height: 1.75; }
+
+  /* ===== SERVICES + PRICES ===== */
+  #services { background: var(--bg-primary); color: var(--text-main); padding: 96px 0; }
+  #services::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: rgba(50,50,30,0.1); }
+  .svc-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; flex-wrap: wrap; gap: 18px; }
+  .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+  .svc-card { background: rgba(255,255,255,0.04); padding: 32px 28px; position: relative; overflow: hidden; transition: var(--tr); border: 1px solid rgba(255,255,255,0.06); }
+  .svc-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--orange); transform: scaleX(0); transition: transform .4s ease; }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-card:hover { border-color: var(--orange); }
+  .svc-ico { display: none; }
+  .svc-card h4 { font-family: var(--font-h); font-size: 1.52rem; font-weight: 400; color: var(--beige); margin-bottom: 7px; line-height: 1.3; }
+  .svc-card p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.88rem; color: var(--green-beige); line-height: 1.72; margin-bottom: 16px; }
+  .svc-price { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; }
+  .svc-from { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--green-beige); text-transform: uppercase; }
+  .svc-val { font-family: var(--font-h); font-size: 1.32rem; color: var(--orange); font-weight: 400; }
+
+  /* SPECIALISTS */
+  .spec-wrap { margin-top: 76px; }
+  .spec-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 18px; margin-top: 40px; }
+  .spec-card { background: var(--bg-secondary); padding: 34px 26px; text-align: center; }
+  .spec-av { width: 72px; height: 72px; background: var(--mid-green); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; position: relative; }
+  .spec-av::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; border: 1px solid rgba(255,90,0,0.32); }
+  .spec-card h4 { font-family: var(--font-sub); font-size: 0.98rem; color: var(--beige); margin-bottom: 4px; }
+  .spec-role { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 11px; }
+  .spec-card p { font-size: 0.76rem; color: var(--green-beige); line-height: 1.72; }
+
+  /* PRICES ACCORDION */
+  #prices { background: var(--bg-primary); padding: 0 0 96px; }
+  .prices-intro { padding-top: 72px; margin-bottom: 10px; }
+  .prices-intro p { color: var(--green-beige); font-size: 0.83rem; margin-top: 10px; line-height: 1.8; }
+  .price-accordion { display: flex; flex-direction: column; gap: 2px; margin-top: 36px; }
+  .pa-item { border: 1px solid rgba(235,235,225,0.07); overflow: hidden; }
+  .pa-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 26px; gap: 16px; min-height: 72px; cursor: pointer; user-select: none; background: rgba(235,235,225,0.03); transition: background .3s; }
+  .pa-header:hover { background: rgba(235,235,225,0.06); }
+  .pa-item.open .pa-header { background: rgba(255,90,0,0.07); border-bottom: 1px solid rgba(255,90,0,0.18); }
+  .pa-title { display: flex; align-items: center; gap: 10px; flex-wrap: nowrap; min-width: 0; flex: 1; overflow: hidden; }
+  .pa-icon { display: none; }
+  .pa-name { font-family: 'Circe', sans-serif; font-weight: 700; font-size: clamp(0.88rem, 1.6vw, 1.08rem); color: var(--beige); line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pa-tag { font-size: 0.58rem; letter-spacing: 0.08em; color: var(--green-beige); border: 1px solid rgba(235,235,225,0.14); padding: 2px 7px; border-radius: 2px; flex-shrink: 0; white-space: nowrap; }
+  .pa-meta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .pa-from { font-family: 'Circe', sans-serif; font-weight: 300; font-size: 0.7rem; color: var(--green-beige); white-space: nowrap; }
+  .pa-from strong { font-family: 'Circe', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--orange); }
+  .pa-chevron { width: 20px; height: 20px; border: 1px solid rgba(235,235,225,0.18); display: flex; align-items: center; justify-content: center; font-size: 0.68rem; color: var(--green-beige); transition: transform .35s ease, background .3s; }
+  .pa-item.open .pa-chevron { transform: rotate(180deg); background: var(--orange); border-color: var(--orange); color: #fff; }
+  .pa-body { max-height: 0; overflow: hidden; transition: max-height .45s cubic-bezier(.4,0,.2,1); }
+  .pa-item.open .pa-body { max-height: 900px; }
+  .pa-content { padding: 24px 26px; }
+  /* mini description in accordion */
+  .pa-desc { font-size: 0.8rem; color: var(--green-beige); line-height: 1.75; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(235,235,225,0.07); }
+  .price-rows { display: flex; flex-direction: column; }
+  .pr { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(235,235,225,0.06); gap: 12px; }
+  .pr:last-child { border-bottom: none; }
+  .pr-name { font-family: 'Circe', sans-serif; font-weight: 300; font-size: 0.84rem; color: var(--green-beige); flex: 1; line-height: 1.4; }
+  .pr-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1px; }
+  .pr-val { font-family: 'Circe', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--beige); white-space: nowrap; }
+  .pa-note { margin-top: 16px; padding: 13px 16px; background: rgba(255,90,0,0.06); border-left: 2px solid var(--orange); }
+  .pa-note p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.78rem; color: var(--green-beige); line-height: 1.58; }
+
+  /* Deposit */
+  .deposit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 2px; }
+  .dep-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 18px 14px; text-align: center; }
+  .dep-pay { font-size: 0.68rem; color: var(--green-beige); margin-bottom: 4px; }
+  .dep-in { font-family: var(--font-h); font-size: 1.12rem; color: var(--green-beige); font-weight: 400; }
+  .dep-arrow { color: var(--orange); font-size: 0.85rem; margin: 5px 0; }
+  .dep-out { font-family: var(--font-h); font-size: 1.5rem; color: var(--orange); font-weight: 400; line-height: 1; }
+  .dep-period { font-size: 0.64rem; color: var(--green-beige); margin-top: 5px; }
+
+  /* Package table — uniform */
+  .pack-table { width: 100%; border-collapse: collapse; margin-top: 2px; }
+  .pack-table th { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-beige); padding: 8px 10px; border-bottom: 1px solid rgba(235,235,225,0.1); text-align: left; font-family: var(--font-body); font-weight: 400; }
+  .pack-table th:not(:first-child) { text-align: right; }
+  .pack-table td { padding: 9px 10px; border-bottom: 1px solid rgba(235,235,225,0.06); font-size: 0.84rem; color: var(--green-beige); vertical-align: top; }
+  .pack-table td:not(:first-child) { text-align: right; }
+  .pack-table tr:last-child td { border-bottom: none; }
+  .pack-main { font-family: 'Circe', sans-serif; font-weight: 700; font-size: 1.05rem; color: var(--beige); display: block; }
+  .pack-per { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.68rem; color: var(--green-beige); display: block; margin-top: 1px; }
+
+  /* Medical massage packages */
+  .med-pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 2px; }
+  .med-pack-item { border: 1px solid rgba(235,235,225,0.08); padding: 18px 20px; }
+  .med-pack-item h5 { font-family: var(--font-h); font-size: 1.05rem; font-weight: 400; color: var(--beige); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,90,0,0.2); }
+  .med-pack-item .pr-name { font-size: 0.8rem; }
+
+  /* ===== APPROACH ===== */
+  #approach { background: var(--bg-primary); padding: 96px 0; }
+
+  .approach-intro { max-width: 580px; margin-bottom: 68px; }
+  .steps { display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 68px 1fr; gap: 32px; padding: 48px 0; border-bottom: 1px solid rgba(235,235,225,0.07); }
+  .step:last-child { border-bottom: none; }
+  .step:hover .step-n { color: var(--orange); }
+  .step-n { font-family: var(--font-h); font-size: 4.2rem; line-height: 1; color: rgba(235,235,225,0.07); font-weight: 300; transition: var(--tr); }
+  .step-c h3 { font-family: var(--font-h); font-size: 1.8rem; font-weight: 400; color: var(--beige); margin-bottom: 5px; }
+  .step-lbl { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; display: block; }
+  .step-c p { font-size: 0.88rem; color: var(--green-beige); line-height: 1.88; max-width: 620px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .pill { font-size: 0.7rem; padding: 5px 13px; border: 1px solid rgba(235,235,225,0.16); border-radius: 2px; color: var(--beige); }
+  .pill.o { border-color: rgba(255,90,0,0.42); color: var(--salmon); }
+
+  /* ===== CTA MAIN ===== */
+  #cta-main { background: var(--orange); padding: 92px 40px; text-align: center; position: relative; overflow: hidden; }
+  #cta-main::before { content: 'UPDATE'; position: absolute; font-family: var(--font-update); font-size: 22vw; font-weight: 300; color: rgba(255,255,255,0.06); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; }
+  #cta-main .s-h { color: #fff; font-size: clamp(2rem, 5vw, 3.8rem); position: relative; z-index: 2; max-width: 660px; margin: 0 auto; }
+  .cta-sub { font-family: 'Circe', sans-serif; font-weight: 200; font-style: normal; font-size: 1.12rem; color: rgba(255,255,255,0.85); max-width: 460px; margin: 16px auto 42px; line-height: 1.48; position: relative; z-index: 2; }
+  .btn-white { display: inline-block; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 15px 48px; background: #fff; color: var(--orange); font-weight: 600; transition: var(--tr); position: relative; z-index: 2; }
+  .btn-white:hover { background: var(--khaki); color: var(--beige); transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,0,0,0.3); }
+  .cta-contacts { display: flex; justify-content: center; gap: 32px; margin-top: 40px; flex-wrap: wrap; position: relative; z-index: 2; }
+  .cta-ct { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.82rem; }
+  .cta-ct:hover { color: var(--text-main); }
+
+
+  /* ===== LOSS ===== */
+  #loss { background: var(--bg-primary); padding: 96px 0; }
+  .loss-in { max-width: 940px; margin: 0 auto; text-align: center; padding: 0 40px; }
+  .loss-in .s-h { color: var(--beige); font-size: clamp(1.8rem, 4vw, 2.9rem); }
+  .loss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; margin-top: 48px; text-align: left; }
+  .loss-item { padding: 24px; border: 1px solid rgba(255,255,255,0.07); background: rgba(255,255,255,0.03); }
+  .loss-item .le { font-size: 1.45rem; margin-bottom: 10px; display: block; }
+  .loss-item p { font-size: 0.83rem; color: var(--green-beige); line-height: 1.8; }
+  .loss-quote { margin-top: 52px; font-family: 'Gropled', sans-serif; font-style: normal; font-size: 1.08rem; color: var(--beige); line-height: 1.75; max-width: 560px; margin-left: auto; margin-right: auto; }
+
+  /* ===== PLEASURE ===== */
+  #pleasure { background: var(--bg-primary); padding: 96px 0; }
+  .pleas-in { display: grid; grid-template-columns: 1fr 1fr; gap: 68px; align-items: center; }
+  .pleas-text .s-h { color: var(--text-main); font-size: clamp(1.9rem, 3.4vw, 2.8rem); }
+  .pleas-text p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.05rem; color: var(--text-muted); line-height: 1.52; margin-top: 20px; }
+  .pleas-btns { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-ghost-dark { display: inline-block; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 12px 30px; background: transparent; color: var(--khaki); border: 1px solid rgba(50,50,30,0.35); transition: var(--tr); }
+  .btn-ghost-dark:hover { border-color: var(--orange); color: var(--orange); }
+  .pleas-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .pv-block { padding: 30px 20px; text-align: center; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+  .pv-block:first-child { grid-column: 1/-1; background: rgba(255,255,255,0.06); padding: 42px; }
+  .pv-num { font-family: var(--font-h); font-size: 3rem; color: var(--orange); font-weight: 300; line-height: 1; margin-bottom: 5px; }
+  .pv-label { font-family: var(--font-h); font-size: 1.02rem; color: var(--beige); margin-bottom: 5px; }
+  .pv-block p { font-size: 0.76rem; color: var(--green-beige); line-height: 1.6; }
+
+  /* ===== REVIEWS ===== */
+  #reviews { background: var(--bg-primary); padding: 96px 0; }
+  .rev-head { text-align: center; margin-bottom: 56px; }
+  .rev-head .s-h { color: var(--beige); }
+  .rev-stars { color: var(--orange); font-size: 1.1rem; margin-bottom: 5px; letter-spacing: 2px; }
+  .rev-rating { font-family: var(--font-h); font-size: 2.7rem; color: var(--beige); line-height: 1; }
+  .rev-count { font-size: 0.76rem; color: var(--green-beige); margin-top: 3px; }
+  .rev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(285px, 1fr)); gap: 2px; }
+  .rev-card { background: rgba(255,255,255,0.04); padding: 32px 30px; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.3s ease, background 0.3s ease; }
+  .rev-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
+  .rev-q { font-size: 3.4rem; color: var(--orange); opacity: .22; line-height: .75; margin-bottom: 14px; font-family: var(--font-h); letter-spacing: -0.02em; }
+  .rev-text { font-family: 'Circe', sans-serif; font-weight: 200; font-style: italic; font-size: 0.9rem; color: var(--text-main); line-height: 1.65; margin-bottom: 22px; opacity: 0.88; }
+  .rev-author { display: flex; align-items: center; gap: 11px; }
+  .rev-av { width: 38px; height: 38px; background: var(--mid-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+  .rev-name { font-size: 0.78rem; color: var(--beige); }
+  .rev-meta { font-size: 0.64rem; color: var(--text-muted); margin-top: 1px; }
+  .rev-s { color: var(--orange); font-size: 0.7rem; margin-left: auto; }
+  .rev-platforms { display: flex; justify-content: center; gap: 24px; margin-top: 48px; flex-wrap: wrap; }
+  .rev-pl { display: flex; align-items: center; gap: 8px; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-beige); border: 1px solid rgba(235,235,225,0.13); padding: 10px 20px; transition: var(--tr); }
+  .rev-pl:hover { border-color: var(--orange); color: var(--beige); }
+
+  /* ===== FINAL CTA ===== */
+  #cta-final { background: var(--bg-primary); padding: 96px 40px; text-align: center; }
+  #cta-final .s-h { color: var(--text-main); font-size: clamp(2rem, 4vw, 3.3rem); }
+  .fin-sub { font-family: 'Circe', sans-serif; font-weight: 200; font-style: normal; font-size: 1.08rem; color: var(--text-muted); max-width: 480px; margin: 16px auto 40px; line-height: 1.50; }
+  .fin-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .fin-contacts { margin-top: 14px; display: flex; justify-content: center; }
+  .fin-phone { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.06em; opacity: 0.95; }
+  .fin-phone:hover { color: var(--text-main); }
+
+  .gift-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); max-width: 660px; margin: 64px auto 0; padding: 40px; text-align: center; }
+  .gift-box h3 { font-family: var(--font-h); font-size: 1.7rem; font-weight: 400; color: var(--beige); margin-bottom: 12px; }
+  .gift-box p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.98rem; color: var(--green-beige); line-height: 1.52; margin-bottom: 24px; }
+
+  /* ===== FOOTER ===== */
+  footer { background: var(--bg-primary); padding: 56px 40px 34px; }
+  .foot-in { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+  .foot-brand .f-logo { font-family: var(--font-update); font-size: 1.8rem; letter-spacing: 0.2em; color: var(--beige); margin-bottom: 4px; }
+  .foot-brand .f-tag { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--green-beige); margin-bottom: 16px; }
+  .foot-brand p { font-size: 0.78rem; color: var(--green-beige); line-height: 1.82; }
+  .foot-col h5 { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--beige); margin-bottom: 16px; }
+  .foot-col a { display: block; padding: 4px 0; font-size: 0.78rem; color: var(--green-beige); transition: color .3s; line-height: 1.6; }
+  .foot-col a { position: relative; }
+  .foot-col a:hover { color: var(--orange); }
+  .foot-bot { border-top: 1px solid rgba(235,235,225,0.07); padding-top: 26px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .foot-bot span { font-size: 0.73rem; color: var(--green-beige); }
+  .soc-links { display: flex; gap: 10px; }
+  .soc-link { width: 36px; height: 36px; border: 1px solid rgba(235,235,225,0.13); display: flex; align-items: center; justify-content: center; font-size: 0.58rem; letter-spacing: 0.06em; font-family: var(--font-body); transition: var(--tr); color: var(--green-beige); }
+  .soc-link:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* Sticky */
+  .sticky-book { position: fixed; bottom: 24px; right: 24px; z-index: 1100; background: var(--orange); color: #fff; font-family: var(--font-body); font-size: 0.66rem; letter-spacing: 0.17em; text-transform: uppercase; padding: 13px 22px; display: flex; align-items: center; gap: 6px; box-shadow: 0 4px 24px rgba(255,90,0,0.5); transition: var(--tr); animation: stickyPulse 3s ease-in-out infinite; }
+  .sticky-book:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(255,90,0,0.65); animation: none; }
+
+  /* ===== TEAM CAROUSEL ===== */
+  #team { background: var(--bg-primary); padding: 96px 0; overflow: hidden; }
+  #team::before { display: none; }
+  .team-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; flex-wrap: wrap; gap: 20px; }
+  .team-head .s-h { margin-bottom: 0; color: var(--khaki) !important; }
+  .team-head .s-label { color: var(--orange); }
+  .team-arrows { display: flex; gap: 10px; }
+  .team-carousel-outer { position: relative; display: flex; align-items: flex-start; }
+  .team-arrow-side {
+    /* push down to vertical center of the 9:16 photo (card=268px → photo-h≈476px, mid=238px) */
+    margin-top: calc(268px * 16/9 / 2 - 22px);
+    flex-shrink: 0; align-self: flex-start;
+  }
+  .team-arrow {
+    width: 46px; height: 46px; border: none; background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; transition: all 0.25s ease;
+    position: relative;
+  }
+  .team-arrow::before {
+    content: '';
+    position: absolute; inset: 0; border-radius: 50%;
+    background: rgba(255,255,255,0.13);
+    transition: background 0.25s ease;
+  }
+  [data-theme="light"] .team-arrow::before { background: rgba(50,50,30,0.10); }
+  .team-arrow svg { position: relative; z-index: 1; width: 18px; height: 18px; stroke: var(--text-main); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.25s ease; }
+  [data-theme="light"] .team-arrow svg { stroke: #32321E; }
+  .team-arrow:hover::before { background: var(--orange); }
+  .team-arrow:hover svg { stroke: #fff; }
+  .team-arrow:disabled { opacity: 0.18; cursor: default; }
+  .team-arrow:disabled:hover::before { background: rgba(255,255,255,0.13); }
+  [data-theme="light"] .team-arrow:disabled:hover::before { background: rgba(50,50,30,0.10); }
+  .team-arrow:disabled:hover svg { stroke: var(--text-main); }
+  .team-track-wrap { overflow: hidden; cursor: grab; user-select: none; flex: 1; min-width: 0; }
+  .team-track-wrap:active { cursor: grabbing; }
+  .team-track { display: flex; gap: 20px; transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94); will-change: transform; }
+  .team-card {
+    flex: 0 0 268px; background: transparent; border: none;
+    display: flex; flex-direction: column; overflow: hidden; transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .team-card:hover { transform: translateY(-4px); }
+  /* 9:16 photo */
+  .team-photo-wrap { position: relative; width: 100%; padding-top: calc(16/9 * 100%); overflow: hidden; background: transparent; flex-shrink: 0; }
+  .team-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.5s ease; }
+  .team-card:hover .team-photo { transform: scale(1.03); }
+  .team-card-body { padding: 18px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+  .team-role { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+  .team-name { font-family: var(--font-h); font-size: 1.18rem; font-weight: 400; color: var(--text-main); margin-bottom: 10px; line-height: 1.2; }
+  /* Expandable desc */
+  .team-desc-wrap { position: relative; margin-bottom: 4px; }
+  .team-desc { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 0.88rem; color: var(--text-muted); line-height: 1.58; max-height: 4.5em; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+  .team-desc.open { max-height: 300px; }
+  .team-desc-fade { position: absolute; bottom: 0; left: 0; right: 0; height: 2.5em; background: linear-gradient(to bottom, transparent, #111110); pointer-events: none; transition: opacity 0.3s; }
+  .team-desc.open ~ .team-desc-fade { opacity: 0; }
+  .team-expand { background: none; border: none; cursor: pointer; font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); padding: 6px 0 10px; display: block; transition: color 0.2s; }
+  .team-expand:hover { color: var(--salmon); }
+  .team-book { display: block; text-align: center; font-family: var(--font-body); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 16px; background: var(--orange); color: #fff; border: none; transition: var(--tr); margin-top: auto; }
+  .team-book:hover { opacity: 0.85; }
+  /* Dots */
+  .team-dots { display: flex; justify-content: center; gap: 7px; margin-top: 32px; }
+  .team-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; padding: 0; transition: var(--tr); }
+  .team-dot.active { background: var(--orange); transform: scale(1.3); }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .nav { padding: 0 16px; gap: 8px; }
+    .nav-center { display: none; }
+    .hamburger { display: flex; }
+    .nav-book span { display: none; }
+    .nav-book { font-size: 0.6rem; letter-spacing: 0.14em; padding: 9px 14px; }
+    .lang-btn { font-size: 0.56rem; padding: 4px 7px; }
+    .wrap { padding: 0 20px; }
+    .prob-grid, .pleas-in { grid-template-columns: 1fr; gap: 28px; }
+    .team-card { flex: 0 0 82vw; max-width: 300px; }
+    .team-arrow-side { margin-top: calc(min(82vw, 300px) * 16 / 9 / 2 - 22px); }
+    .step { grid-template-columns: 44px 1fr; gap: 16px; }
+    .step-n { font-size: 2.6rem; }
+    .foot-in { grid-template-columns: 1fr 1fr; gap: 26px; }
+    .foot-in .foot-brand { grid-column: 1/-1; }
+    .deposit-grid { grid-template-columns: 1fr 1fr; }
+    .pleas-visual { grid-template-columns: 1fr; }
+    .pv-block:first-child { grid-column: 1; }
+    .med-pack-grid { grid-template-columns: 1fr; }
+    .pack-table th, .pack-table td { padding: 7px 6px; font-size: 0.75rem; }
+  }
+
+  /* ===== GALLERY ===== */
+
+
+  .gallery-cta { padding: 64px 40px; text-align: center; background: var(--bg-primary); }
+  .gallery-cta h2 { font-family: var(--font-h); font-weight: 400; font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.15; color: var(--text-main); margin-bottom: 16px; }
+  .gallery-cta p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 36px; letter-spacing: 0.04em; }
+
+  /* ===== NUDGE (надо было раньше) ===== */
+  #nudge { background: var(--bg-primary); padding: 96px 0; }
+  .nudge-in { max-width: 740px; margin: 0 auto; text-align: center; padding: 0 40px; }
+  .nudge-quote { font-family: var(--font-h); font-size: clamp(2.2rem, 4.5vw, 3.4rem); font-weight: 400; color: var(--text-main); line-height: 1.15; margin-bottom: 36px; position: relative; }
+  .nudge-quote::before { content: '«'; position: absolute; top: -0.3em; left: -0.5em; font-size: 4em; color: var(--orange); opacity: 0.1; font-family: var(--font-h); pointer-events: none; }
+  .nudge-quote em { color: var(--orange); font-style: normal; }
+  .nudge-body { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.0rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 44px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .nudge-accent-line { font-family: 'Circe', sans-serif; font-weight: 700; font-style: normal; font-size: 1.06em; color: var(--text-main); letter-spacing: 0.01em; }
+  .nudge-accent { font-family: var(--font-sub); font-style: normal; font-size: 1rem; color: var(--text-main); margin-bottom: 40px; }
+
+  /* ===== PHOTO CTA ===== */
+  #photo-cta { position: relative; min-height: 72vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #photo-cta .pc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  #photo-cta .pc-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.72) 80%, rgba(0,0,0,0.82) 100%); }
+  #photo-cta .pc-content { position: relative; z-index: 2; text-align: center; padding: 60px 40px; }
+  #photo-cta h2 { font-family: var(--font-h); font-weight: 400; font-size: clamp(2.2rem, 4.5vw, 3.8rem); color: #fff; margin-bottom: 14px; line-height: 1.1; }
+  #photo-cta p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.18rem; color: rgba(255,255,255,0.82); margin-bottom: 36px; letter-spacing: 0.04em; line-height: 1.65; }
+
+  /* Team intro */
+  .team-intro-block { max-width: 1100px; margin: 0 auto 48px; padding: 0 40px; }
+  .team-intro-title { font-size: clamp(2rem, 4.5vw, 3.1rem); margin-bottom: 16px; }
+  .team-intro-sub { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.02rem; color: var(--text-muted); line-height: 1.50; max-width: 580px; margin-bottom: 24px; }
+  .team-intro-header { display: flex; align-items: flex-end; justify-content: flex-start; gap: 24px; flex-wrap: wrap; }
+  .team-rating-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .team-stars { font-size: 1.1rem; letter-spacing: 0.06em; display: flex; gap: 3px; }
+  .team-rating-note { font-size: 0.64rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.75; }
+
+  /* Problem section restyle */
+  #problem { background: var(--bg-secondary); padding: 112px 0; }
+  .prob-new { max-width: 740px; margin: 0 auto; padding: 0 40px; text-align: center; }
+  .hollow-accent { font-family: var(--font-hollow); font-style: normal; letter-spacing: 0.04em; }
+  .bigp-accent { font-family: 'Gropled', sans-serif; font-style: normal; display: block; margin-top: 0.15em; }
+  .bigp-hollow { font-size: 1.18em; }
+  .prob-new .big-p { font-family: var(--font-sub); font-style: normal; font-size: clamp(1.5rem, 3.2vw, 2.1rem); color: var(--text-main); line-height: 1.28; margin-bottom: 28px; }
+  .prob-new .sub-p { font-family: 'Circe', sans-serif; font-weight: 200; font-size: 1.0rem; color: var(--text-muted); line-height: 1.52; }
+
+  @media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-cta { padding: 52px 24px; }
+    .nudge-in { padding: 0 24px; }
+    #photo-cta .pc-content { padding: 52px 24px; }
+  }
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  
+  /* ============================================================
+     PHOTO STRIP
+  ============================================================ */
+  .photo-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+    height: clamp(160px, 22vw, 280px); overflow: hidden;
+  }
+  .ps-img { overflow: hidden; }
+  .ps-img img { width: 100%; height: 100%; object-fit: cover; object-position: center;
+    transition: transform 0.7s ease; display: block; filter: brightness(0.88); }
+  .ps-img:hover img { transform: scale(1.05); filter: brightness(1); }
+
+  /* ============================================================
+     NUDGE: side image on desktop
+  ============================================================ */
+  .nudge-in { position: relative; }
+  .nudge-img-wrap {
+    position: absolute; right: -220px; top: 50%; transform: translateY(-50%);
+    width: 180px; height: 260px; overflow: hidden; opacity: 0.18;
+    pointer-events: none;
+  }
+  .nudge-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* ============================================================
+     REVIEWS: ambient background photo
+  ============================================================ */
+
+
+  /* ============================================================
+     GLOBAL MOBILE-FIRST TYPOGRAPHY
+  ============================================================ */
+  .s-label { font-size: 0.64rem; letter-spacing: 0.36em; }
+  .s-h { font-size: clamp(1.7rem, 5.5vw, 3.1rem); line-height: 1.12; }
+
+  /* ============================================================
+     HERO MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #hero { padding: 100px 24px 70px; min-height: 100svh; }
+    .hero-title { font-size: clamp(3.8rem, 18vw, 6rem); letter-spacing: 0.12em; }
+    .hero-subtitle { font-size: 0.52rem; letter-spacing: 0.32em; margin: 10px 0 32px; }
+    .hero-tag { font-size: clamp(1.1rem, 5.5vw, 1.4rem); max-width: 100%; }
+    .hero-cause { font-size: 0.95rem; max-width: 100%; }
+    .hero-services { gap: 7px; }
+    .hero-pill { font-size: 0.62rem; padding: 7px 15px; }
+    .hero-btns { flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+    .btn-orange, .btn-ghost { width: 100%; max-width: 320px; justify-content: center; padding: 16px 24px; }
+  }
+
+  /* ============================================================
+     PROBLEM SECTION MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #problem { padding: 72px 0; }
+    .prob-new { padding: 0 24px; }
+    .prob-new .big-p { font-size: clamp(1.28rem, 4.5vw, 1.6rem); }
+    .prob-new .sub-p { font-size: 0.95rem; }
+  }
+
+  /* ============================================================
+     PHOTO STRIP MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    .photo-strip { grid-template-columns: repeat(2, 1fr); height: clamp(120px, 40vw, 200px); }
+    .photo-strip { grid-template-columns: repeat(2, 1fr); height: 190px; }
+  }
+
+  /* ============================================================
+     TEAM SECTION MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #team { padding: 64px 0; }
+    .team-intro-block { padding: 0 24px; margin-bottom: 36px; }
+    .team-intro-header { flex-direction: column; align-items: flex-start; }
+    .team-intro-title { font-size: clamp(1.8rem, 7vw, 2.4rem) !important; }
+    .team-intro-sub { font-size: 0.96rem; }
+    .team-card { flex: 0 0 75vw; max-width: 280px; }
+    .team-card-body { padding: 14px 12px 12px; }
+    .team-name { font-size: 1.05rem; }
+    .team-dots { margin-top: 24px; }
+    .team-head { margin-bottom: 28px; padding: 0 24px; }
+  }
+
+  /* ============================================================
+     SERVICES MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #services { padding: 64px 0; }
+    .svc-grid { grid-template-columns: 1fr !important; gap: 12px; }
+    .svc-card { padding: 24px 20px; }
+    .spec-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+    .spec-card { padding: 20px 16px; }
+  }
+
+  /* ============================================================
+     GALLERY MOBILE — 2-col masonry feel
+  ============================================================ */
+  @media (max-width: 600px) {
+    .gal-scroll { height: 200px; }
+    .gal-item { width: 52vw; }
+    .gallery-cta { padding: 48px 24px; }
+    .gallery-cta h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+  }
+
+  /* ============================================================
+     NUDGE MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #nudge { padding: 72px 0; }
+    .nudge-in { padding: 0 24px; }
+    .nudge-img-wrap { display: none; }
+    .nudge-quote { font-size: clamp(1.7rem, 7vw, 2.2rem); margin-bottom: 24px; }
+    .nudge-quote::before { display: none; }
+    .nudge-body { font-size: 0.96rem; line-height: 1.88; }
+  }
+
+  /* ============================================================
+     PRICES MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #prices .wrap { padding: 0 16px; }
+    .pa-head { font-size: 0.9rem; padding: 16px 0; }
+    .pr-name { font-size: 0.8rem; }
+    .pr-val { font-size: 0.98rem; }
+    .deposit-grid { grid-template-columns: 1fr 1fr !important; gap: 6px; }
+    .dep-card { padding: 14px 10px; }
+    .pack-table { font-size: 0.8rem; }
+    .pack-table th, .pack-table td { padding: 7px 8px; }
+    .med-pack-grid { grid-template-columns: 1fr !important; }
+  }
+
+  /* ============================================================
+     APPROACH MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #approach { padding: 64px 0; }
+    .approach-intro { padding: 0 24px; margin-bottom: 40px; }
+    .step { grid-template-columns: 40px 1fr; gap: 14px; padding: 32px 24px; }
+    .step-n { font-size: 2.8rem; }
+    .step-c h3 { font-size: 1.4rem; }
+    .step-c p { font-size: 0.84rem; }
+    .pills { gap: 6px; }
+    .pill { font-size: 0.64rem; padding: 4px 11px; }
+  }
+
+  /* ============================================================
+     PLEASURE (60-90 блок) MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #pleasure { padding: 64px 0; }
+    .pleas-in { grid-template-columns: 1fr !important; gap: 36px; }
+    .pleas-text p { font-size: 0.98rem; }
+    .pleas-btns { flex-direction: column; gap: 10px; }
+    .btn-dark, .btn-ghost-dark { width: 100%; text-align: center; justify-content: center; display: block; padding: 14px 24px; }
+    .pleas-visual { grid-template-columns: 1fr 1fr !important; gap: 8px; }
+    .pv-block:first-child { grid-column: 1/-1; padding: 30px 20px; }
+    .pv-num { font-size: 2.4rem; }
+  }
+
+  /* ============================================================
+     REVIEWS MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #reviews { padding: 64px 0; }
+    .rev-grid { grid-template-columns: 1fr !important; gap: 2px; }
+    .rev-card { padding: 24px 20px; }
+    .rev-text { font-size: 0.84rem; }
+    .rev-platforms { gap: 12px; margin-top: 32px; }
+    .rev-pl { padding: 10px 16px; font-size: 0.64rem; }
+    .rev-head { margin-bottom: 36px; }
+
+  }
+
+  /* ============================================================
+     LOSS MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #loss { padding: 64px 0; }
+    .loss-in { padding: 0 24px; }
+    .loss-grid { grid-template-columns: 1fr !important; gap: 12px; margin-top: 32px; }
+    .loss-item { padding: 18px 16px; }
+    .loss-quote { font-size: 0.94rem; margin-top: 36px; }
+  }
+
+  /* ============================================================
+     CTA MAIN MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #cta-main { padding: 64px 24px; }
+    .cta-contacts { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .cta-ct { font-size: 0.8rem; }
+    .btn-white { padding: 14px 36px; }
+  }
+
+  /* ============================================================
+     PHOTO CTA MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #photo-cta { min-height: 55vh; }
+    #photo-cta .pc-content { padding: 40px 24px; }
+    #photo-cta h2 { font-size: clamp(1.8rem, 7.5vw, 2.6rem); }
+  }
+
+  /* ============================================================
+     FINAL CTA MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    #cta-final { padding: 64px 24px; }
+    .fin-btns { flex-direction: column; align-items: center; gap: 10px; }
+    .fin-btns a { width: 100%; max-width: 280px; text-align: center; }
+    .gift-box { padding: 28px 24px; margin-top: 40px; }
+  }
+
+  /* ============================================================
+     FOOTER MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    footer { padding: 48px 24px 28px; }
+    .foot-in { grid-template-columns: 1fr !important; gap: 28px; }
+    .foot-brand { grid-column: 1 !important; }
+    .foot-bot { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+
+  /* ============================================================
+     STICKY BUTTON MOBILE
+  ============================================================ */
+  @media (max-width: 600px) {
+    .sticky-book { bottom: 16px; right: 16px; padding: 11px 18px; font-size: 0.6rem; }
+  }
+
+  /* ============================================================
+     WRAP PADDING RESPONSIVE
+  ============================================================ */
+  @media (max-width: 600px) {
+    .wrap { padding: 0 20px; }
+    /* section paddings managed per-section */
+  }
+
+  /* ============================================================
+     GALLERY LAYOUT: varied desktop — 3 col, first row 2+1
+  ============================================================ */
+  /* gallery desktop handled by gal-scroll */
+
+  @keyframes stickyPulse {
+    0%, 100% { box-shadow: 0 4px 24px rgba(255,90,0,0.5); }
+    50%       { box-shadow: 0 4px 36px rgba(255,90,0,0.72); }
+  }
+
+  /* ===== MUSIC PLAYER ===== */
+  .music-btn {
+    position: fixed; bottom: 80px; left: 24px; z-index: 1100;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(17,17,16,0.82); border: 1px solid rgba(255,255,255,0.14);
+    backdrop-filter: blur(12px); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease; color: var(--text-muted);
+    font-size: 1rem;
+  }
+  [data-theme="light"] .music-btn {
+    background: rgba(255,255,255,0.88); border-color: rgba(50,50,30,0.14); color: #6A6A50;
+  }
+  .music-btn:hover { border-color: var(--orange); color: var(--orange); transform: scale(1.08); }
+  .music-btn.playing { border-color: var(--orange); color: var(--orange); }
+  .music-btn .music-icon-play  { display: none; }
+  .music-btn .music-icon-pause { display: block; }
+  .music-btn.paused .music-icon-play  { display: block; }
+  .music-btn.paused .music-icon-pause { display: none; }
+  .music-btn:not(.paused)::after {
+    content: ''; position: absolute; inset: -6px; border-radius: 50%;
+    border: 1px solid rgba(255,90,0,0.35);
+    animation: musicPulse 2s ease-in-out infinite;
+  }
+  @keyframes musicPulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50%       { transform: scale(1.18); opacity: 0; }
+  }
+  
+  @media (max-width: 600px) {
+    .music-btn { bottom: 72px; left: 16px; width: 40px; height: 40px; font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+<canvas id="hero-canvas" aria-hidden="true"></canvas>
+<canvas id="light-canvas" aria-hidden="true"></canvas>
+
+
+<!-- MUSIC PLAYER -->
+<button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Выключить музыку" aria-label="Музыка">
+  <span class="music-icon-play">♪</span>
+  <span class="music-icon-pause">■</span>
+</button>
+<audio id="music-audio" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/updateaudio.MP3" loop preload="auto"></audio>
+
+<!-- STICKY -->
+<a href="https://update.altegio.me" target="_blank" class="sticky-book">
+  <span>📅</span>
+  <span data-lang="ru" class="active">Записаться</span>
+  <span data-lang="en">Book Now</span>
+  <span data-lang="ka">დაჯავშნა</span>
+</a>
+
+
+<!-- NAV -->
+<header class="nav">
+  <a href="#hero" class="nav-logo">
+    UPDATE
+    <small>massage &amp; wellness · tbilisi</small>
+  </a>
+
+  <nav class="nav-center">
+    <a href="#services" class="nav-link">
+      <span data-lang="ru" class="active">Услуги</span><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span>
+    </a>
+    <a href="#prices" class="nav-link">
+      <span data-lang="ru" class="active">Цены</span><span data-lang="en">Prices</span><span data-lang="ka">ფასები</span>
+    </a>
+    <a href="#team" class="nav-link">
+      <span data-lang="ru" class="active">Команда</span><span data-lang="en">Team</span><span data-lang="ka">გუნდი</span>
+    </a>
+    <a href="#reviews" class="nav-link">
+      <span data-lang="ru" class="active">Отзывы</span><span data-lang="en">Reviews</span><span data-lang="ka">მიმოხილვები</span>
+    </a>
+    <a href="#cta-final" class="nav-link">
+      <span data-lang="ru" class="active">Контакты</span><span data-lang="en">Contacts</span><span data-lang="ka">კონტაქტი</span>
+    </a>
+  </nav>
+
+  <!-- RIGHT: lang fixed + book button -->
+  <div class="nav-right">
+    <button class="hamburger" id="hamburger" aria-label="Меню" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ka')">KA</button>
+    <div class="theme-toggle-wrap">
+      <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Переключить тему" title="Светлая / тёмная тема"></button>
+    </div>
+    <a href="https://update.altegio.me" target="_blank" class="nav-book">
+      <span data-lang="ru" class="active">Онлайн запись</span>
+      <span data-lang="en">Book Online</span>
+      <span data-lang="ka">ჩაწერა</span>
+    </a>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="closeMobileMenu()"><span data-lang="ru" class="active">Услуги</span><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></a>
+  <a href="#prices" onclick="closeMobileMenu()"><span data-lang="ru" class="active">Цены</span><span data-lang="en">Prices</span><span data-lang="ka">ფასები</span></a>
+  <a href="#team" onclick="closeMobileMenu()"><span data-lang="ru" class="active">Команда</span><span data-lang="en">Team</span><span data-lang="ka">გუნდი</span></a>
+  <a href="#reviews" onclick="closeMobileMenu()"><span data-lang="ru" class="active">Отзывы</span><span data-lang="en">Reviews</span><span data-lang="ka">მიმოხილვები</span></a>
+  <a href="#cta-final" onclick="closeMobileMenu()"><span data-lang="ru" class="active">Контакты</span><span data-lang="en">Contacts</span><span data-lang="ka">კონტაქტი</span></a>
+  <a href="https://update.altegio.me" target="_blank" class="mob-book"><span data-lang="ru" class="active">Записаться онлайн</span><span data-lang="en">Book Online</span><span data-lang="ka">ჩაეწერეთ</span></a>
+</nav>
+
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-orn">· soft care ·</div>
+  <div class="hero-title">UPDATE</div>
+  <div class="hero-subtitle">MASSAGE &amp; WELLNESS · TBILISI</div>
+
+  <div class="hero-tag">
+    <span data-lang="ru" class="active">Расслабьте <span class="hollow-accent">тело</span>. Обновите <span class="hollow-accent">энергию</span>.</span>
+    <span data-lang="en">Relax your body. Renew your energy.</span>
+    <span data-lang="ka">მოდით, სხეულს მოასვენეთ. განაახლეთ ენერგია.</span>
+  </div>
+  <div class="hero-cause">
+    <span data-lang="ru" class="active">Возьмите перерыв от рутины, чтобы прояснить мысли, выспаться и легче жить день</span>
+    <span data-lang="en">Take a break from routine — to clear your mind, sleep better, and move through the day with ease</span>
+    <span data-lang="ka">შეიღეთ პაუზა რუტინიდან — გაიწმინდეთ გონება, გამოიძინეთ და ცხოვრება გაადვილდება</span>
+  </div>
+  <!-- Service capsules -->
+  <div class="hero-services">
+    <a href="#services" class="hero-pill"><span data-lang="ru" class="active">Массажи</span><span data-lang="en">Massage</span><span data-lang="ka">მასაჟები</span></a>
+    <a href="#services" class="hero-pill"><span data-lang="ru" class="active">Мануальная терапия</span><span data-lang="en">Manual Therapy</span><span data-lang="ka">მანუალური თერაპია</span></a>
+    <a href="#services" class="hero-pill"><span data-lang="ru" class="active">Телесная терапия</span><span data-lang="en">Body Therapy</span><span data-lang="ka">სხეულის თერაპია</span></a>
+    <a href="#services" class="hero-pill"><span data-lang="ru" class="active">ЛФК / Физкультура</span><span data-lang="en">LFK / Physiotherapy</span><span data-lang="ka">LFK / ფიზკულტურა</span></a>
+  </div>
+  <div class="hero-btns">
+    <a href="https://update.altegio.me" target="_blank" class="btn-orange">
+      <span data-lang="ru" class="active">Забронировать</span><span data-lang="en">Book Now</span><span data-lang="ka">დაჯავშნა</span>
+    </a>
+    <a href="#reviews" class="btn-ghost">
+      <span data-lang="ru" class="active">Отзывы</span><span data-lang="en">Reviews</span><span data-lang="ka">მიმოხილვები</span>
+    </a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span data-lang="ru" class="active">Листайте</span><span data-lang="en">Scroll</span><span data-lang="ka">გადაახვიეთ</span>
+  </div>
+</section>
+
+
+<!-- ===== PHOTO STRIP ===== -->
+<div class="photo-strip" aria-hidden="true">
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_2.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_5.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_9.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_3.webp" alt="" loading="lazy"></div>
+</div>
+<!-- ===== PROBLEM ===== -->
+<section id="problem">
+  <div class="wrap">
+    <div class="prob-new reveal">
+      <span class="s-label"><span data-lang="ru" class="active">Почему Update</span><span data-lang="en">Why Update</span><span data-lang="ka">რატომ Update</span></span>
+      <p class="big-p">
+        <span data-lang="ru" class="active">Каждый день нас что-то пытается выбить, отвлечь от важного и от самого себя.<br><span class="bigp-accent">Из-за этого мы копим<br><span class="hollow-accent bigp-hollow">не энергию, а усталость.</span></span></span>
+        <span data-lang="en">Every day something tries to knock us off balance, distract us from what matters and from ourselves. Instead of energy, we accumulate fatigue.</span>
+        <span data-lang="ka">ყოველდღე რაღაც გვცდილობს გამოვიდეს, გვაშოროს მნიშვნელოვანისგან. ამის გამო ვაგროვებთ დაღლილობას და არა ენერგიას.</span>
+      </p>
+      <p class="sub-p">
+        <span data-lang="ru" class="active">Мы создали массажную студию Update, чтобы люди в Тбилиси (и мы сами) обновляли силы и восстанавливали эмоциональный фон.</span>
+        <span data-lang="en">We created Update massage studio so that people in Tbilisi — and we ourselves — can restore their strength and emotional balance.</span>
+        <span data-lang="ka">ჩვენ შევქმენით Update მასაჟის სტუდია, რათა თბილისელებმა (და ჩვენ თვითონ) განვაახლოთ ძალები და აღვადგინოთ ემოციური ფონი.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section id="team">
+  <div class="wrap">
+    <div class="team-intro-block reveal">
+      <span class="s-label"><span data-lang="ru" class="active">Наши специалисты</span><span data-lang="en">Our specialists</span><span data-lang="ka">ჩვენი სპეციალისტები</span></span>
+      <div class="team-intro-header">
+        <div>
+          <h2 class="s-h light team-intro-title">
+            <span data-lang="ru" class="active">Команда</span>
+            <span data-lang="en">Team</span>
+            <span data-lang="ka">გუნდი</span>
+          </h2>
+          <p class="team-intro-sub">
+            <span data-lang="ru" class="active">Специалисты Update с медицинским&nbsp;/&nbsp;спортивным образованием, либо с большим опытом и огромным количеством отзывов</span>
+            <span data-lang="en">Update specialists with medical or sports education, or extensive experience and a huge number of reviews</span>
+            <span data-lang="ka">Update-ის სპეციალისტები სამედიცინო/სპორტული განათლებით ან დიდი გამოცდილებით</span>
+          </p>
+          <div class="team-rating-row">
+            <div class="team-stars">⭐️⭐️⭐️⭐️⭐️</div>
+            <div class="team-rating-note"><span data-lang="ru" class="active">Оценка за 200+ отзывов</span><span data-lang="en">Rating: 200+ reviews</span><span data-lang="ka">შეფასება 200+ მიმოხილვაზე</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="team-carousel-outer">
+      <button class="team-arrow team-arrow-side" id="team-prev" aria-label="Назад"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="team-track-wrap" id="team-track-wrap">
+      <div class="team-track" id="team-track">
+
+        <!-- 1. Николай Дадыгин -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Nikolai-Dadygin.webp" alt="Николай Дадыгин" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мануальный терапевт</span><span data-lang="en">Manual Therapist</span><span data-lang="ka">მანუალური თერაპევტი</span></div>
+            <div class="team-name">Николай Дадыгин</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Специалист с высшим медицинским образованием, специализация — мануальная терапия. Помогает при болях и ограничениях подвижности, нарушениях осанки, мышечном напряжении и восстановлении после травм. Также часто обращаются с головными болями и мигренями.</span>
+                <span data-lang="en">Specialist with higher medical education, specializing in manual therapy. Helps with pain and limited mobility, postural disorders, muscle tension and post-trauma recovery. Also frequently consulted for headaches and migraines.</span>
+                <span data-lang="ka">სპეციალისტი უმაღლესი სამედიცინო განათლებით, სპეციალიზაცია — მანუალური თერაპია. ტკივილი, პოზის დარღვევა, კუნთოვანი დაძაბულობა, ტრავმის შემდგომ.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418011.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Николаю</span><span data-lang="en">Book with Nikolai</span><span data-lang="ka">ჩაეწერეთ ნიკოლაისთან</span></a>
+          </div>
+        </div>
+
+        <!-- 2. Ната Солнечная -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Nata-Solnechnaya.webp" alt="Ната Солнечная" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Телесный терапевт</span><span data-lang="en">Body Therapist</span><span data-lang="ka">სხეულის თერაპევტი</span></div>
+            <div class="team-name">Ната Солнечная</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Телесный терапевт, более 6 лет практики. Основное направление — соматика и работа с телесными блоками: помогает снять хроническое напряжение, последствия стресса, асимметрии, головные боли и усталость. В процессе обучает лучше чувствовать тело и поддерживать результат простыми техниками (дыхание, антистресс-практики, осознанность).</span>
+                <span data-lang="en">Body therapist with over 6 years of practice. Main focus — somatics and body blocks: helps relieve chronic tension, stress effects, asymmetries, headaches and fatigue. Teaches clients to better feel their body and maintain results with simple techniques.</span>
+                <span data-lang="ka">სხეულის თერაპევტი, 6 წელზე მეტი პრაქტიკა. სომატიკა და სხეულის ბლოკები: ქრონიკული დაძაბულობა, სტრესის შედეგები. სწავლობს სხეულის შეგრძნებებს.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418013.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Нате</span><span data-lang="en">Book with Nata</span><span data-lang="ka">ჩაეწერეთ ნატასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 3. Амалия Газарян -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Amalia-Ghazaryan.webp" alt="Амалия Газарян" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Амалия Газарян</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист с медицинским образованием. Комбинирует техники под запрос: оздоровительный/спортивный, лимфодренажный, миофасциальный, антицеллюлитный, массаж лица. Частые запросы — снять напряжение и отёчность, улучшить сон и общее самочувствие.</span>
+                <span data-lang="en">Massage therapist with medical education. Combines techniques by request: wellness/sports, lymphatic drainage, myofascial, anti-cellulite, facial massage. Common requests — relieve tension and swelling, improve sleep and overall wellbeing.</span>
+                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით. კომბინირებს ტექნიკებს: ჯანდაცვის/სპორტული, ლიმფური დრენაჟი, მიოფასციური, ანტიცელულიტური, სახის მასაჟი.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418017.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Амалии</span><span data-lang="en">Book with Amalia</span><span data-lang="ka">ჩაეწერეთ ამალიასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 4. Руслан Джиджелава -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Ruslan-Jijelava.webp" alt="Руслан Джиджелава" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Руслан Джиджелава</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист с опытом более 15 лет. Сочетает классические, спортивные, лимфодренажные и шиацу-техники для глубокой и целостной проработки тела. Подходит для снятия напряжения после нагрузок, подготовки к тренировке и проработки проблемных зон (в том числе стоп).</span>
+                <span data-lang="en">Massage therapist with over 15 years of experience. Combines classic, sports, lymphatic drainage and shiatsu techniques for deep, holistic body work. Great for post-workout recovery, pre-training and targeting problem areas including feet.</span>
+                <span data-lang="ka">მასაჟისტი 15 წელზე მეტი გამოცდილებით. კლასიკური, სპორტული, ლიმფური დრენაჟი და შიაცუ ტექნიკების კომბინაცია. ვარჯიშის შემდეგ, პრობლემური ზონები.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418019.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Руслану</span><span data-lang="en">Book with Ruslan</span><span data-lang="ka">ჩაეწერეთ რუსლანთან</span></a>
+          </div>
+        </div>
+
+        <!-- 5. Иа Дарахвелидзе -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Ia-Darakhvelidze.webp" alt="Иа Дарахвелидзе" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Иа Дарахвелидзе</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Индивидуальный подход: внимательно отслеживает реакцию тканей и добавляет элементы пассивной гимнастики для усиления эффекта. Часто обращаются с болью и дискомфортом в шее/спине/пояснице, триггерными точками и усталостью. Помогает снять скованность и улучшить подвижность.</span>
+                <span data-lang="en">Individual approach: carefully monitors tissue response and adds passive gymnastics elements to enhance results. Clients often come with neck/back pain, trigger points and fatigue. Helps relieve stiffness and improve mobility.</span>
+                <span data-lang="ka">ინდივიდუალური მიდგომა: ყურადღებით ადევნებს თვალყურს ქსოვილების რეაქციას. კისრის/ზურგის ტკივილი, ტრიგერული წერტილები, სიმტკიცე.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1404737.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Иа</span><span data-lang="en">Book with Ia</span><span data-lang="ka">ჩაეწერეთ იასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 7. Влада Пустоварова -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Vlada-Pustovarova.webp" alt="Влада Пустоварова" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Влада Пустоварова</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист с медицинским образованием, работает с 2019 года. Мягко настраивает силу и темп под запрос: помогает при мышечных спазмах, болях в шее и спине, головных болях и мигренях. Отличный выбор, если нужно «выключить голову» и глубоко расслабиться.</span>
+                <span data-lang="en">Massage therapist with medical education, working since 2019. Gently adjusts pressure and pace to your needs: helps with muscle spasms, neck and back pain, headaches and migraines. Great choice for deeply switching off and relaxing.</span>
+                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით, 2019 წლიდან. კუნთოვანი სპაზმები, კისრისა და ზურგის ტკივილი, თავის ტკივილი. ღრმა დასვენება.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418022.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Владе</span><span data-lang="en">Book with Vlada</span><span data-lang="ka">ჩაეწერეთ ვლადასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 8. Анастасия Калашникова -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Anastasia-Kalashnikova.webp" alt="Анастасия Калашникова" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Анастасия Калашникова</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Работает мягко и внимательно, подбирая технику под состояние, настроение и запрос клиента. Подходит тем, кто хочет расслабиться, снизить стресс и комфортно проработать проблемные зоны без боли. Техники — мягкие, но глубокие, с ощущением заботы и полного расслабления.</span>
+                <span data-lang="en">Works gently and attentively, selecting technique by the client's condition, mood and request. Ideal for those who want to relax, reduce stress and address problem areas without pain. Soft but deep techniques with a feeling of complete care.</span>
+                <span data-lang="ka">მუშაობს მსუბუქად და ყურადღებით. შესაფერისია მათთვის, ვისაც სურს დასვენება, სტრესის შემცირება, პრობლემური ზონების გადამუშავება ტკივილის გარეშე.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1374725.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Анастасии</span><span data-lang="en">Book with Anastasia</span><span data-lang="ka">ჩაეწერეთ ანასტასიასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 9. Татьяна Хакимова -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Tatyana-Khakimova.webp" alt="Татьяна Хакимова" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Татьяна Хакимова</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист с 15-летним опытом. Работает комплексно и подбирает индивидуальную программу: релакс, миофасциальные техники, лимфодренаж и коррекция фигуры. Отдельное направление — массаж лица (скульптурно-буккальный, моделирование, ручная пластика).</span>
+                <span data-lang="en">Massage therapist with 15 years of experience. Works comprehensively with individual programs: relaxation, myofascial techniques, lymphatic drainage and body contouring. Specialty — facial massage: sculptural-buccal, modelling, manual plastic.</span>
+                <span data-lang="ka">მასაჟისტი 15 წლის გამოცდილებით. კომპლექსური ინდივიდუალური პროგრამა: რელაქსი, მიოფასციური, ლიმფური დრენაჟი. სახის მასაჟი — სკულპტურული-ბუკალური.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418025.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Татьяне</span><span data-lang="en">Book with Tatyana</span><span data-lang="ka">ჩაეწერეთ ტატიანასთან</span></a>
+          </div>
+        </div>
+
+        <!-- 10. Евгений Тараканов -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Evgeniy-Tarakanov.webp" alt="Евгений Тараканов" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Евгений Тараканов</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист с медицинским образованием, работает с 2019 года. Специализация — медицинский и спортивный массаж: помогает снять боли в спине при сидячем образе жизни и восстановиться после тренировок. Техники силовые, с глубокой проработкой зажимов.</span>
+                <span data-lang="en">Massage therapist with medical education, working since 2019. Specializes in medical and sports massage: helps relieve back pain from sedentary lifestyle and recovery after training. Strong techniques with deep tension work.</span>
+                <span data-lang="ka">მასაჟისტი სამედიცინო განათლებით, 2019 წლიდან. სამედიცინო და სპორტული მასაჟი. ზურგის ტკივილი სედენტური ცხოვრებისას, ვარჯიშის შემდეგ აღდგენა.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418029.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Евгению</span><span data-lang="en">Book with Evgeny</span><span data-lang="ka">ჩაეწერეთ ევგენისთან</span></a>
+          </div>
+        </div>
+
+        <!-- 11. Ирина Третьякова -->
+        <div class="team-card">
+          <div class="team-photo-wrap">
+            <img class="team-photo" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/Irina-Tretyakova.webp" alt="Ирина Третьякова" loading="lazy">
+          </div>
+          <div class="team-card-body">
+            <div class="team-role"><span data-lang="ru" class="active">Мастер по массажу</span><span data-lang="en">Massage Specialist</span><span data-lang="ka">მასაჟის სპეციალისტი</span></div>
+            <div class="team-name">Ирина Третьякова</div>
+            <div class="team-desc-wrap">
+              <div class="team-desc">
+                <span data-lang="ru" class="active">Массажист, работает с 2020 года. Предпочитает авторскую смешанную технику — сочетает разные подходы под состояние и запрос клиента. Мягкая, успокаивающая работа с деликатной, но глубокой проработкой проблемных зон.</span>
+                <span data-lang="en">Massage therapist since 2020. Prefers an original mixed technique combining different approaches to match the client's condition and request. Soft, calming work with delicate but deep treatment of problem areas.</span>
+                <span data-lang="ka">მასაჟისტი 2020 წლიდან. ავტორული შერეული ტექნიკა. მსუბუქი, დამამშვიდებელი მუშაობა პრობლემური ზონების ღრმა გადამუშავებით.</span>
+              </div>
+              <div class="team-desc-fade"></div>
+            </div>
+            <button class="team-expand" onclick="toggleDesc(this)"><span data-lang="ru" class="active">Подробнее ↓</span><span data-lang="en">Read more ↓</span><span data-lang="ka">მეტი ↓</span></button>
+            <a href="https://n1418030.alteg.io" target="_blank" class="team-book"><span data-lang="ru" class="active">Записаться к Ирине</span><span data-lang="en">Book with Irina</span><span data-lang="ka">ჩაეწერეთ ირინასთან</span></a>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /track-wrap -->
+      <button class="team-arrow team-arrow-side" id="team-next" aria-label="Вперёд"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+    </div><!-- /carousel-outer -->
+
+    <!-- Dots -->
+    <div class="team-dots" id="team-dots"></div>
+
+  </div>
+</section>
+
+<!-- ===== PHOTO CTA ===== -->
+<section id="photo-cta">
+  <img class="pc-img" src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_7.webp" alt="Massage Update Tbilisi" loading="lazy">
+  <div class="pc-overlay"></div>
+  <div class="pc-content reveal">
+    <h2>
+      <span data-lang="ru" class="active"><span class="hollow-accent">Восстановитесь</span> сегодня —<br>забронируйте сеанс сейчас</span>
+      <span data-lang="en">Recover today —<br>book a session now</span>
+      <span data-lang="ka">გამოჯანმრთელდით დღეს —<br>დაჯავშნეთ სეანსი ახლავე</span>
+    </h2>
+    <p>
+      <span data-lang="ru" class="active">если поменяются планы — перенесем время</span>
+      <span data-lang="en">if plans change — we'll reschedule</span>
+      <span data-lang="ka">თუ გეგმები შეიცვლება — გადავიტანთ დროს</span>
+    </p>
+    <a href="https://update.altegio.me" target="_blank" class="btn-orange">
+      <span data-lang="ru" class="active">Забронировать</span><span data-lang="en">Book Now</span><span data-lang="ka">დაჯავშნა</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div>
+        <span class="s-label"><span data-lang="ru" class="active">Что мы предлагаем</span><span data-lang="en">What we offer</span><span data-lang="ka">რას ვთავაზობთ</span></span>
+        <h2 class="s-h dark"><span data-lang="ru" class="active">Услуги</span><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h2>
+      </div>
+      <a href="https://update.altegio.me" target="_blank" class="btn-dark">
+        <span data-lang="ru" class="active">Онлайн запись</span><span data-lang="en">Book Online</span><span data-lang="ka">ჩაწერა</span>
+      </a>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <h4><span data-lang="ru" class="active">Массаж</span><span data-lang="en">Massage</span><span data-lang="ka">მასაჟი</span></h4>
+        <p data-lang="ru" class="active">+15 техник — подбираем специалиста под запрос. Вы платите за время, не за технику.</p>
+        <p data-lang="en">+15 techniques — we select the specialist for your request. You pay for time, not technique.</p>
+        <p data-lang="ka">+15 ტექნიკა — სპეციალისტს ვირჩევთ. იხდით დროისთვის.</p>
+        <div class="svc-price"><span class="svc-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span></span><span class="svc-val">100 GEL</span></div>
+      </div>
+
+      <div class="svc-card">
+        <h4><span data-lang="ru" class="active">Мануальный терапевт</span><span data-lang="en">Manual Therapist</span><span data-lang="ka">მანუალური თერაპევტი</span></h4>
+        <p data-lang="ru" class="active">Николай Дадыгин — врач с медобразованием, практика с 2014 г. Боли в спине и шее, головные боли, осанка, восстановление после травм.</p>
+        <p data-lang="en">Nikolai Dadygin — MD, since 2014. Back/neck pain, headaches, posture issues, post-trauma recovery.</p>
+        <p data-lang="ka">ნიკოლოზ დადიგინი — ექიმი, 2014 წლიდან. ზურგი, კისერი, თავის ტკივილი, ტრავმა.</p>
+        <div class="svc-price"><span class="svc-from"><span data-lang="ru" class="active">консультация</span><span data-lang="en">consultation</span><span data-lang="ka">კონსულტაცია</span></span><span class="svc-val">50 GEL</span></div>
+      </div>
+      <div class="svc-card">
+        <h4><span data-lang="ru" class="active">Детский массаж</span><span data-lang="en">Children's Massage</span><span data-lang="ka">ბავშვის მასაჟი</span></h4>
+        <p data-lang="ru" class="active">С 3 лет. Бережная работа по показаниям. Присутствие родителей, рекомендации по упражнениям дома.</p>
+        <p data-lang="en">From age 3. Careful work by indications. Parents present, home exercise recommendations.</p>
+        <p data-lang="ka">3 წლიდან. ფრთხილი მუშაობა. მშობლების ყოფნა, სახლის ვარჯიშის რეკომენდაციები.</p>
+        <div class="svc-price"><span class="svc-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span></span><span class="svc-val">100 GEL</span></div>
+      </div>
+      <div class="svc-card">
+        <h4><span data-lang="ru" class="active">Телесная терапия</span><span data-lang="en">Body Therapy</span><span data-lang="ka">სხეულის თერაპია</span></h4>
+        <p data-lang="ru" class="active">Микс массажа через одежду и разговорной терапии. Работает с триггерами и зажимами из-за стресса и накопленных эмоций.</p>
+        <p data-lang="en">A mix of massage through clothing and talk therapy. Works with stress and emotional triggers.</p>
+        <p data-lang="ka">მასაჟი ტანსაცმლით + საუბრის თერაპია. სტრესისა და ემოციური ბლოკები.</p>
+        <div class="svc-price"><span class="svc-from"><span data-lang="ru" class="active">первый сеанс</span><span data-lang="en">first session</span><span data-lang="ka">პირველი სეანსი</span></span><span class="svc-val">270 GEL</span></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PHOTO STRIP 2 ===== -->
+<div class="photo-strip" aria-hidden="true">
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_4.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_6.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_10.webp" alt="" loading="lazy"></div>
+  <div class="ps-img"><img src="https://updatestudiotbilisi-hash.github.io/update-team-assets/massage_8.webp" alt="" loading="lazy"></div>
+</div>
+
+<!-- ===== PRICES (ACCORDION) ===== -->
+<section id="prices">
+  <div class="wrap">
+    <div class="prices-intro reveal">
+      <span class="s-label"><span data-lang="ru" class="active">Прозрачные цены</span><span data-lang="en">Transparent pricing</span><span data-lang="ka">გამჭვირვალე ფასები</span></span>
+      <h2 class="s-h light"><span data-lang="ru" class="active">Цены на услуги</span><span data-lang="en">Service Prices</span><span data-lang="ka">სერვისების ფასები</span></h2>
+      <p>
+        <span data-lang="ru" class="active">Цены в грузинских лари (GEL). Нажмите на интересующий блок — он раскроется.</span>
+        <span data-lang="en">Prices in Georgian Lari (GEL). Click any block to expand details.</span>
+        <span data-lang="ka">ფასები GEL-ში. დააჭირეთ ნებისმიერ ბლოკს დეტალებისთვის.</span>
+      </p>
+    </div>
+
+    <div class="price-accordion reveal">
+
+      <!-- MASSAGE -->
+      <div class="pa-item" id="pa-massage">
+        <div class="pa-header" onclick="togglePa('pa-massage')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Массаж</span><span data-lang="en">Massage</span><span data-lang="ka">მასაჟი</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span> <strong>100 GEL</strong></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <div class="price-rows">
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">40 минут</span><span data-lang="en">40 min</span><span data-lang="ka">40 წთ</span></span><div class="pr-right"><span class="pr-val">100 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">60 минут</span><span data-lang="en">60 min</span><span data-lang="ka">60 წთ</span></span><div class="pr-right"><span class="pr-val">140 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">90 минут</span><span data-lang="en">90 min</span><span data-lang="ka">90 წთ</span></span><div class="pr-right"><span class="pr-val">180 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">120 минут</span><span data-lang="en">120 min</span><span data-lang="ka">120 წთ</span></span><div class="pr-right"><span class="pr-val">220 GEL</span></div></div>
+            </div>
+            <div class="pa-note"><p data-lang="ru" class="active">Вы платите за время, а не за технику. Мастера владеют +15 техниками и адаптируют их под ваш запрос.</p><p data-lang="en">You pay for time, not technique. Masters know +15 techniques and adapt them to your request.</p><p data-lang="ka">იხდით დროისთვის. ოსტატები ფლობენ +15 ტექნიკას.</p></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- MANUAL THERAPIST -->
+      <div class="pa-item" id="pa-manual">
+        <div class="pa-header" onclick="togglePa('pa-manual')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Мануальный терапевт</span><span data-lang="en">Manual Therapist</span><span data-lang="ka">მანუალური თერაპია</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span> <strong>50 GEL</strong></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <div class="price-rows">
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Консультация 30 мин</span><span data-lang="en">Consultation 30 min</span><span data-lang="ka">კონსულტაცია 30 წთ</span></span><div class="pr-right"><span class="pr-val">50 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Терапия 30 мин</span><span data-lang="en">Therapy 30 min</span><span data-lang="ka">თერაპია 30 წთ</span></span><div class="pr-right"><span class="pr-val">120 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Терапия 60 мин</span><span data-lang="en">Therapy 60 min</span><span data-lang="ka">თერაპია 60 წთ</span></span><div class="pr-right"><span class="pr-val">170 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Лечебный массаж 20 мин</span><span data-lang="en">Medical massage 20 min</span><span data-lang="ka">სამ. მასაჟი 20 წთ</span></span><div class="pr-right"><span class="pr-val">90 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Лечебный массаж 40 мин</span><span data-lang="en">Medical massage 40 min</span><span data-lang="ka">სამ. მასაჟი 40 წთ</span></span><div class="pr-right"><span class="pr-val">140 GEL</span></div></div>
+            </div>
+            <div class="pa-note">
+              <p data-lang="ru" class="active">Николай Дадыгин — врач с высшим медицинским образованием, практика с 2014 года. Работает с болями в спине и шее, головными болями, нарушениями осанки и восстановлением после травм. Если для продолжения приёма требуются дополнительные обследования — оплачивается только консультация.</p>
+              <p data-lang="en">Nikolai Dadygin — MD, practicing since 2014. Works with back and neck pain, headaches, posture issues, and post-trauma recovery. If further examination is needed, only the consultation is charged.</p>
+              <p data-lang="ka">ნიკოლოზ დადიგინი — ექიმი, 2014 წლიდან. ზურგი, კისერი, თავის ტკივილი, პოზა, ტრავმის შემდგომი.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHILDREN'S -->
+      <div class="pa-item" id="pa-children">
+        <div class="pa-header" onclick="togglePa('pa-children')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Детский массаж</span><span data-lang="en">Children's Massage</span><span data-lang="ka">ბავშვის მასაჟი</span></span>
+            <span class="pa-tag"><span data-lang="ru" class="active">от 3 лет</span><span data-lang="en">from age 3</span><span data-lang="ka">3 წლიდან</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span> <strong>100 GEL</strong></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <div class="price-rows">
+              <div class="pr"><span class="pr-name">40 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></span><div class="pr-right"><span class="pr-val">100 GEL</span></div></div>
+              <div class="pr"><span class="pr-name">60 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></span><div class="pr-right"><span class="pr-val">140 GEL</span></div></div>
+            </div>
+            <div class="pa-note"><p data-lang="ru" class="active">Бережная работа по показаниям командой специалистов с медицинским образованием. Индивидуальный подход, присутствие родителей, рекомендации по упражнениям дома.</p><p data-lang="en">Careful work by medically trained specialists. Individual approach, parents present, home exercise recommendations.</p><p data-lang="ka">ფრთხილი მუშაობა. მშობლების ყოფნა, სახლის ვარჯიშის რეკომენდაციები.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BODY THERAPY -->
+      <div class="pa-item" id="pa-body">
+        <div class="pa-header" onclick="togglePa('pa-body')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Телесная терапия</span><span data-lang="en">Body Therapy</span><span data-lang="ka">სხეულის თერაპია</span></a>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span> <strong>90 GEL</strong></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <div class="price-rows">
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Первичный сеанс 120 мин</span><span data-lang="en">Initial session 120 min</span><span data-lang="ka">პირველადი 120 წთ</span></span><div class="pr-right"><span class="pr-val">270 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Повторный сеанс 60 мин</span><span data-lang="en">Follow-up 60 min</span><span data-lang="ka">განმეორებითი 60 წთ</span></span><div class="pr-right"><span class="pr-val">150 GEL</span></div></div>
+              <div class="pr"><span class="pr-name"><span data-lang="ru" class="active">Повторный сеанс 30 мин</span><span data-lang="en">Follow-up 30 min</span><span data-lang="ka">განმეორებითი 30 წთ</span></span><div class="pr-right"><span class="pr-val">90 GEL</span></div></div>
+            </div>
+            <div class="pa-note">
+              <p data-lang="ru" class="active">Телесная терапия — это микс массажа через одежду и разговорной терапии. Телесный терапевт работает с триггерами и зажимами в теле, возникшими из-за стресса или сильных эмоций. Помогает снять накопленное напряжение и изменить эмоциональные паттерны.</p>
+              <p data-lang="en">Body therapy is a mix of massage through clothing and talk therapy. Works with triggers and tension caused by stress or strong emotions. Helps release accumulated tension and change emotional patterns.</p>
+              <p data-lang="ka">სხეულის თერაპია — მასაჟი ტანსაცმლით + საუბრის თერაპია. მუშაობს სტრესით გამოწვეულ ბლოკებთან და ეხმარება ემოციური პატერნების შეცვლაში.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- MASSAGE PACKAGES — uniform styling, per-session price -->
+      <div class="pa-item" id="pa-packages">
+        <div class="pa-header" onclick="togglePa('pa-packages')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Абонементы на массаж</span><span data-lang="en">Massage Packages</span><span data-lang="ka">მასაჟის აბონემენტები</span></span>
+            <span class="pa-tag"><span data-lang="ru" class="active">обычный и детский</span><span data-lang="en">regular & children</span><span data-lang="ka">ჩვეულებრივი და საბავშვო</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from" style="color:var(--salmon);">−10% / −15% / −20%</span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <table class="pack-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>4 <span data-lang="ru" class="active">сеанса</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span><br><span style="color:var(--salmon);font-size:0.6rem;">−10%</span></th>
+                  <th>8 <span data-lang="ru" class="active">сеансов</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span><br><span style="color:var(--salmon);font-size:0.6rem;">−15%</span></th>
+                  <th>12 <span data-lang="ru" class="active">сеансов</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span><br><span style="color:var(--salmon);font-size:0.6rem;">−20%</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>40 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></td>
+                  <td><span class="pack-main">360 GEL</span><span class="pack-per">90 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">680 GEL</span><span class="pack-per">85 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">960 GEL</span><span class="pack-per">80 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                </tr>
+                <tr>
+                  <td>60 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></td>
+                  <td><span class="pack-main">500 GEL</span><span class="pack-per">125 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">950 GEL</span><span class="pack-per">~119 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">1 340 GEL</span><span class="pack-per">~112 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                </tr>
+                <tr>
+                  <td>90 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></td>
+                  <td><span class="pack-main">650 GEL</span><span class="pack-per">163 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">1 220 GEL</span><span class="pack-per">~153 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">1 730 GEL</span><span class="pack-per">~144 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                </tr>
+                <tr>
+                  <td>120 <span data-lang="ru" class="active">мин</span><span data-lang="en">min</span><span data-lang="ka">წთ</span></td>
+                  <td><span class="pack-main">800 GEL</span><span class="pack-per">200 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">1 490 GEL</span><span class="pack-per">~186 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                  <td><span class="pack-main">2 100 GEL</span><span class="pack-per">175 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">session</span><span data-lang="ka">სეანსი</span></span></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pa-note" style="margin-top:16px;"><p data-lang="ru" class="active">Может использовать неограниченное количество людей · Запись к любому массажисту · Активация в день первого посещения · Срок: 3 / 6 / 9 месяцев</p><p data-lang="en">Unlimited people · Any masseur · Activates on first visit · Valid: 3 / 6 / 9 months</p><p data-lang="ka">შეუზღუდავი ადამიანები · ნებისმიერი ოსტატი · გამოიყენება: 3/6/9 თვე</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEDICAL MASSAGE PACKAGES — cleaner layout -->
+      <div class="pa-item" id="pa-medpacks">
+        <div class="pa-header" onclick="togglePa('pa-medpacks')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Абонементы: лечебный массаж</span><span data-lang="en">Packages: Medical Massage</span><span data-lang="ka">სამ. მასაჟის აბონემენტი</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from"><span data-lang="ru" class="active">от</span><span data-lang="en">from</span><span data-lang="ka">დან</span> <strong>240 GEL</strong></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <div class="med-pack-grid">
+              <!-- 20 min -->
+              <div class="med-pack-item">
+                <h5>20 <span data-lang="ru" class="active">минут</span><span data-lang="en">minutes</span><span data-lang="ka">წუთი</span></h5>
+                <div class="price-rows">
+                  <div class="pr">
+                    <span class="pr-name">3 <span data-lang="ru" class="active">сеанса</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span> · 3 <span data-lang="ru" class="active">мес</span><span data-lang="en">mo</span><span data-lang="ka">თვე</span></span>
+                    <div class="pr-right">
+                      <span class="pr-val">240 GEL</span>
+                      <span style="font-size:0.65rem;color:var(--green-beige);">80 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">ea</span><span data-lang="ka">სეანსი</span></span>
+                    </div>
+                  </div>
+                  <div class="pr">
+                    <span class="pr-name">5 <span data-lang="ru" class="active">сеансов</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span> · 5 <span data-lang="ru" class="active">мес</span><span data-lang="en">mo</span><span data-lang="ka">თვე</span></span>
+                    <div class="pr-right">
+                      <span class="pr-val">375 GEL</span>
+                      <span style="font-size:0.65rem;color:var(--green-beige);">75 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">ea</span><span data-lang="ka">სეანსი</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 40 min -->
+              <div class="med-pack-item">
+                <h5>40 <span data-lang="ru" class="active">минут</span><span data-lang="en">minutes</span><span data-lang="ka">წუთი</span></h5>
+                <div class="price-rows">
+                  <div class="pr">
+                    <span class="pr-name">3 <span data-lang="ru" class="active">сеанса</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span> · 3 <span data-lang="ru" class="active">мес</span><span data-lang="en">mo</span><span data-lang="ka">თვე</span></span>
+                    <div class="pr-right">
+                      <span class="pr-val">390 GEL</span>
+                      <span style="font-size:0.65rem;color:var(--green-beige);">130 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">ea</span><span data-lang="ka">სეანსი</span></span>
+                    </div>
+                  </div>
+                  <div class="pr">
+                    <span class="pr-name">5 <span data-lang="ru" class="active">сеансов</span><span data-lang="en">sessions</span><span data-lang="ka">სეანსი</span> · 5 <span data-lang="ru" class="active">мес</span><span data-lang="en">mo</span><span data-lang="ka">თვე</span></span>
+                    <div class="pr-right">
+                      <span class="pr-val">625 GEL</span>
+                      <span style="font-size:0.65rem;color:var(--green-beige);">125 GEL / <span data-lang="ru" class="active">сеанс</span><span data-lang="en">ea</span><span data-lang="ka">სეანსი</span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pa-note" style="margin-top:14px;"><p data-lang="ru" class="active">Может использовать неограниченное количество людей. Активация — в день первого посещения по абонементу.</p><p data-lang="en">Unlimited people. Activates on first visit.</p><p data-lang="ka">შეუზღუდავი ადამიანები. გააქტიურება პირველ ვიზიტზე.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEPOSITS -->
+      <div class="pa-item" id="pa-deposit">
+        <div class="pa-header" onclick="togglePa('pa-deposit')">
+          <div class="pa-title">
+            
+            <span class="pa-name"><span data-lang="ru" class="active">Депозиты</span><span data-lang="en">Deposits</span><span data-lang="ka">დეპოზიტები</span></span>
+            <span class="pa-tag" style="border-color:rgba(255,90,0,0.38);color:var(--salmon);"><span data-lang="ru" class="active">на все услуги</span><span data-lang="en">all services</span><span data-lang="ka">ყველა სერვისი</span></span>
+          </div>
+          <div class="pa-meta">
+            <span class="pa-from" style="color:var(--salmon);"><span data-lang="ru" class="active">пополняете — получаете больше</span><span data-lang="en">pay less — get more</span><span data-lang="ka">მეტი ღირებულება</span></span>
+            <div class="pa-chevron">▾</div>
+          </div>
+        </div>
+        <div class="pa-body">
+          <div class="pa-content">
+            <p style="font-size:0.82rem;color:var(--green-beige);line-height:1.78;margin-bottom:18px;">
+              <span data-lang="ru" class="active">Вы пополняете депозит — мы начисляем <strong style="color:var(--beige);">больше денег на счёт</strong>. Работает на <strong style="color:var(--beige);">все услуги студии</strong>. Можно пользоваться всей семьёй или делиться с друзьями и коллегами.</span>
+              <span data-lang="en">You top up a deposit — we add <strong style="color:var(--beige);">bonus money to your account</strong>. Works for <strong style="color:var(--beige);">all studio services</strong>. Share with family, friends, or colleagues.</span>
+              <span data-lang="ka">შეავსეთ დეპოზიტი — ჩვენ ვამატებთ <strong style="color:var(--beige);">ბონუს ფულს</strong>. ყველა სერვისი. ოჯახი და მეგობრები.</span>
+            </p>
+            <div class="deposit-grid">
+              <div class="dep-card">
+                <div class="dep-pay"><span data-lang="ru" class="active">Пополняете</span><span data-lang="en">You pay</span><span data-lang="ka">იხდით</span></div>
+                <div class="dep-in">500 GEL</div>
+                <div class="dep-arrow">↓</div>
+                <div class="dep-pay"><span data-lang="ru" class="active">На счету</span><span data-lang="en">You get</span><span data-lang="ka">ანგარიშზე</span></div>
+                <div class="dep-out">550 GEL</div>
+                <div class="dep-period">3 <span data-lang="ru" class="active">месяца</span><span data-lang="en">months</span><span data-lang="ka">თვე</span></div>
+              </div>
+              <div class="dep-card">
+                <div class="dep-pay"><span data-lang="ru" class="active">Пополняете</span><span data-lang="en">You pay</span><span data-lang="ka">იხდით</span></div>
+                <div class="dep-in">1 000 GEL</div>
+                <div class="dep-arrow">↓</div>
+                <div class="dep-pay"><span data-lang="ru" class="active">На счету</span><span data-lang="en">You get</span><span data-lang="ka">ანგარიშზე</span></div>
+                <div class="dep-out">1 150 GEL</div>
+                <div class="dep-period">6 <span data-lang="ru" class="active">месяцев</span><span data-lang="en">months</span><span data-lang="ka">თვე</span></div>
+              </div>
+              <div class="dep-card">
+                <div class="dep-pay"><span data-lang="ru" class="active">Пополняете</span><span data-lang="en">You pay</span><span data-lang="ka">იხდით</span></div>
+                <div class="dep-in">1 500 GEL</div>
+                <div class="dep-arrow">↓</div>
+                <div class="dep-pay"><span data-lang="ru" class="active">На счету</span><span data-lang="en">You get</span><span data-lang="ka">ანგარიშზე</span></div>
+                <div class="dep-out">1 800 GEL</div>
+                <div class="dep-period">9 <span data-lang="ru" class="active">месяцев</span><span data-lang="en">months</span><span data-lang="ka">თვე</span></div>
+              </div>
+              <div class="dep-card" style="border-color:rgba(255,90,0,0.28);">
+                <div class="dep-pay"><span data-lang="ru" class="active">Пополняете</span><span data-lang="en">You pay</span><span data-lang="ka">იხდით</span></div>
+                <div class="dep-in">8 000 GEL</div>
+                <div class="dep-arrow" style="color:var(--salmon);">↓</div>
+                <div class="dep-pay"><span data-lang="ru" class="active">На счету</span><span data-lang="en">You get</span><span data-lang="ka">ანგარიშზე</span></div>
+                <div class="dep-out" style="font-size:1.3rem;">10 500 GEL</div>
+                <div class="dep-period">12 <span data-lang="ru" class="active">месяцев</span><span data-lang="en">months</span><span data-lang="ka">თვე</span></div>
+              </div>
+            </div>
+            <div class="pa-note" style="margin-top:14px;"><p data-lang="ru" class="active">Активация в день первого посещения по депозиту.</p><p data-lang="en">Activated on the first visit day.</p><p data-lang="ka">გააქტიურება პირველი ვიზიტის დღეს.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /accordion -->
+  </div>
+</section>
+
+
+<!-- ===== NUDGE ===== -->
+<section id="nudge">
+  <div class="nudge-in">
+    <div class="reveal">
+      <span class="s-label" style="text-align:center;display:block;"><span data-lang="ru" class="active">Часто слышим после сеанса</span><span data-lang="en">We often hear after a session</span><span data-lang="ka">ხშირად გვისმენია სეანსის შემდეგ</span></span>
+      <div class="nudge-quote">
+        <span data-lang="ru" class="active">«Надо было <span class="hollow-accent">раньше</span> прийти»</span>
+        <span data-lang="en">"Should have come sooner"</span>
+        <span data-lang="ka">«უნდა მომსვლოდი ადრე»</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="nudge-body">
+        <span data-lang="ru" class="active"><span class="nudge-accent-line">Обычно мы идем на массаж когда усталость становится чуть ли не хронической.</span><br>
+        В этом нет вашей вины — мы привыкаем не только к хорошему.<br>
+        Просто запишитесь сейчас — и стресса уже станет меньше.<br>
+        Потому что начнется отсчет до дня, когда усталость сбросится, состояние перезагрузится.</span>
+        <span data-lang="en">We usually go for a massage when exhaustion is nearly chronic.<br><br>
+        That's not your fault — we get used to things, not just good ones.<br><br>
+        Just book now — and the stress will already start to ease.<br>
+        Because the countdown begins to the day your fatigue lifts and your state resets.</span>
+        <span data-lang="ka">ჩვეულებრივ მასაჟზე მივდივართ მაშინ, როდესაც დაღლილობა თითქმის ქრონიკული ხდება.<br><br>
+        ეს თქვენი잘못 არ არის — ჩვენ ვეჩვევით არა მარტო კარგს.<br><br>
+        უბრალოდ ჩაეწერეთ ახლა — და სტრესი უკვე შემცირდება.<br>
+        რადგან დაიწყება ათვლა იმ დღემდე, სადაც დაღლილობა ჩამოიცილება.</span>
+      </p>
+    </div>
+    <div class="reveal">
+      <a href="https://update.altegio.me" target="_blank" class="btn-orange">
+        <span data-lang="ru" class="active">Записаться сейчас</span><span data-lang="en">Book Now</span><span data-lang="ka">ჩაეწერეთ ახლა</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="rev-head reveal">
+      <span class="s-label"><span data-lang="ru" class="active">Что говорят клиенты</span><span data-lang="en">What clients say</span><span data-lang="ka">კლიენტები ამბობენ</span></span>
+      <div class="rev-stars">★ ★ ★ ★ ★</div>
+      <div class="rev-rating">4.9</div>
+      <div class="rev-count"><span data-lang="ru" class="active">по отзывам на Google и Яндекс</span><span data-lang="en">Google & Yandex reviews</span><span data-lang="ka">Google და Yandex მიმოხილვები</span></div>
+    </div>
+    <div class="rev-grid reveal">
+
+      <!-- Юлия — altegio, Николай -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">Николай вернул мне мою шею! Очень чуткий и внимательный специалист. Всё доступно объясняет.</p>
+        <div class="rev-author"><div class="rev-av">Ю</div><div><div class="rev-name">Юлия</div><div class="rev-meta">Сервис Altegio</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+      <!-- Наталья — altegio, Николай -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">Была у Николая несколько раз. Меня беспокоили шум в ушах, состояние ваты в голове, отсутствие сил и тревожность. Сразу после первого приёма стало легче. Сейчас организм приходит в норму и качество жизни улучшается.</p>
+        <div class="rev-author"><div class="rev-av">Н</div><div><div class="rev-name">Наталья</div><div class="rev-meta">Сервис Altegio</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+      <!-- Lana — altegio, Ната -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">У меня уже было 3 сессии с Натой. Первая ощущалась как избавление от внутреннего эмоционального болота. Появилась такая прям внутренняя энергия. После второго и третьего сеанса появилось внутреннее спокойствие, опора. Сон улучшился в разы и фоновой тревоги стало гооораздо меньше.</p>
+        <div class="rev-author"><div class="rev-av">L</div><div><div class="rev-name">Lana</div><div class="rev-meta">Сервис Altegio</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+      <!-- Кристина — altegio, Максим -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">Была у Максима на массаже — очень понравился сам массаж, состояние после — отвал всего. Сам мастер очень чуткий, милый и внимательный ко всем деталям. Приду ещё обязательно!</p>
+        <div class="rev-author"><div class="rev-av">К</div><div><div class="rev-name">Кристина К.</div><div class="rev-meta">Сервис Altegio</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+      <!-- Anastasiia — Google Maps -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">Самая любимая студия массажа в Тбилиси! А мне есть с чем сравнить. Прекрасный сервис — чай с орешками и сухофруктами после массажа это идеально! В студии чисто и действительно расслабляющая атмосфера. Рекомендую и спасибо за такое прекрасное место в Тбилиси!</p>
+        <div class="rev-author"><div class="rev-av">A</div><div><div class="rev-name">Anastasiia D.</div><div class="rev-meta">Google Maps</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+      <!-- Екатерина — Yandex -->
+      <div class="rev-card">
+        <div class="rev-q">"</div>
+        <p class="rev-text">Пошла по совету подруги, которая ходила несколько раз и осталась очень довольна курсом. Уже после 1-го сеанса чувствую, что район плеч и шеи не такие зажатые, как раньше. Приятное место.</p>
+        <div class="rev-author"><div class="rev-av">Е</div><div><div class="rev-name">Екатерина</div><div class="rev-meta">Яндекс</div></div><div class="rev-s">★★★★★</div></div>
+      </div>
+
+    </div>
+    <div class="rev-platforms reveal">
+      <a href="https://maps.app.goo.gl/9ie8dHtpMjGZLRtj7" target="_blank" class="rev-pl"><span>🗺</span> Google Maps</a>
+      <a href="https://yandex.com.ge/maps/-/CPasuEor" target="_blank" class="rev-pl"><span>🗺</span> Яндекс</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== FINAL CTA ===== -->
+<section id="cta-final">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+    <span class="s-label" style="display:block;text-align:center;"><span data-lang="ru" class="active">Мы ждём вас</span><span data-lang="en">We're waiting for you</span><span data-lang="ka">ჩვენ გელოდებით</span></span>
+    <h2 class="s-h dark" style="max-width:660px;margin:0 auto;">
+      <span data-lang="ru" class="active">Начните заботу о себе <span class="hollow-accent">сегодня</span></span>
+      <span data-lang="en">Start taking care of yourself today</span>
+      <span data-lang="ka">დაიწყეთ საკუთარი თავის მოვლა დღეს</span>
+    </h2>
+    <p class="fin-sub">
+      <span data-lang="ru" class="active">Запишитесь онлайн, напишите в WhatsApp или Telegram — ответим быстро и поможем выбрать услугу.</span>
+      <span data-lang="en">Book online, write on WhatsApp or Telegram — we respond quickly and help you choose the right service.</span>
+      <span data-lang="ka">ჩაეწერეთ ონლაინ, დაწერეთ WhatsApp-ში ან Telegram-ში.</span>
+    </p>
+    <div class="fin-btns reveal">
+      <a href="https://update.altegio.me" target="_blank" class="btn-dark"><span data-lang="ru" class="active">Онлайн запись</span><span data-lang="en">Book Online</span><span data-lang="ka">ჩაწერა</span></a>
+      <a href="https://wa.me/995591253261" target="_blank" class="btn-orange">WhatsApp</a>
+      <a href="https://t.me/Update_Tbilisi" target="_blank" class="btn-ghost-dark">Telegram</a>
+    </div>
+    <div class="fin-contacts reveal">
+      <a href="tel:+995591253261" class="fin-phone">+995 591 25 32 61</a>
+    </div>
+    <div class="gift-box reveal">
+      <span class="s-label" style="display:block;text-align:center;margin-bottom:12px;"><span data-lang="ru" class="active">Подарите заботу</span><span data-lang="en">Gift care</span><span data-lang="ka">გაუჩუქეთ მოვლა</span></span>
+      <h3><span data-lang="ru" class="active">Подарочные сертификаты</span><span data-lang="en">Gift Certificates</span><span data-lang="ka">სასაჩუქრე სერტიფიკატები</span></h3>
+      <p data-lang="ru" class="active">На любые услуги, количество сеансов, абонементы или депозиты. Доступны в электронном и физическом формате с выбором дизайна.</p>
+      <p data-lang="en">For any services, sessions, packages or deposits. Digital and physical format with choice of design.</p>
+      <p data-lang="ka">ნებისმიერ სერვისზე, სეანსებზე, აბონემენტებზე ან დეპოზიტებზე. ელექტრონული და ფიზიკური ფორმატი.</p>
+      <a href="https://wa.me/995591253261" target="_blank" class="btn-orange"><span data-lang="ru" class="active">Заказать сертификат</span><span data-lang="en">Order Certificate</span><span data-lang="ka">სერტიფიკატის შეკვეთა</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <div class="f-logo">UPDATE</div>
+      <div class="f-tag">massage &amp; wellness · tbilisi</div>
+      <p data-lang="ru" class="active">Wellness-студия в Тбилиси. Массаж, мануальная и телесная терапия, ЛФК. Работаем с причиной — не с симптомом.</p>
+      <p data-lang="en">Wellness studio in Tbilisi. Massage, manual & body therapy, smart fitness. We work on the cause — not the symptom.</p>
+      <p data-lang="ka">ველნეს სტუდია თბილისში. მასაჟი, მანუალური და სხეულის თერაპია, LFK.</p>
+    </div>
+    <div class="foot-col">
+      <h5><span data-lang="ru" class="active">Услуги</span><span data-lang="en">Services</span><span data-lang="ka">სერვისები</span></h5>
+      <a href="#services"><span data-lang="ru" class="active">Массаж</span><span data-lang="en">Massage</span><span data-lang="ka">მასაჟი</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Мануальный терапевт</span><span data-lang="en">Manual Therapist</span><span data-lang="ka">მანუალური</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Телесная терапия</span><span data-lang="en">Body Therapy</span><span data-lang="ka">სხეულის თერაპია</span></a>
+      <a href="#services"><span data-lang="ru" class="active">Детский массаж</span><span data-lang="en">Children's Massage</span><span data-lang="ka">ბავშვის მასაჟი</span></a>
+      <a href="#services"><span data-lang="ru" class="active">ЛФК / Умный фитнес</span><span data-lang="en">Smart Fitness</span><span data-lang="ka">LFK</span></a>
+    </div>
+    <div class="foot-col">
+      <h5><span data-lang="ru" class="active">Контакты</span><span data-lang="en">Contacts</span><span data-lang="ka">კონტაქტები</span></h5>
+      <a href="https://wa.me/995591253261" target="_blank">WhatsApp: +995 591 25 32 61</a>
+      <a href="tel:+995591253261">+995 591 25 32 61</a>
+      <a href="https://t.me/Update_Tbilisi" target="_blank">Telegram: @Update_Tbilisi</a>
+      <a href="https://www.instagram.com/updatestudiotbilisi/" target="_blank">Instagram</a>
+      <a href="https://maps.app.goo.gl/9ie8dHtpMjGZLRtj7" target="_blank"><span data-lang="ru" class="active">ул. Кипшидзе, 2Б, Тбилиси</span><span data-lang="en">Kipshidze 2B, Tbilisi</span><span data-lang="ka">კიფშიძე 2ბ, თბილისი</span></a>
+    </div>
+    <div class="foot-col">
+      <h5><span data-lang="ru" class="active">Онлайн</span><span data-lang="en">Online</span><span data-lang="ka">ონლაინ</span></h5>
+      <a href="https://update.altegio.me" target="_blank"><span data-lang="ru" class="active">Онлайн запись</span><span data-lang="en">Book Online</span><span data-lang="ka">ჩაწერა</span></a>
+      <a href="https://maps.app.goo.gl/9ie8dHtpMjGZLRtj7" target="_blank">Google Maps</a>
+      <a href="https://yandex.com.ge/maps/-/CPasuEor" target="_blank">Yandex Maps</a>
+      <a href="https://www.instagram.com/updatestudiotbilisi/" target="_blank">Instagram</a>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2025 UPDATE massage &amp; wellness · Tbilisi</span>
+    <div class="soc-links">
+      <a href="https://www.instagram.com/updatestudiotbilisi/" target="_blank" class="soc-link">IG</a>
+      <a href="https://t.me/Update_Tbilisi" target="_blank" class="soc-link">TG</a>
+      <a href="https://wa.me/995591253261" target="_blank" class="soc-link">WA</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+
+// ============================================================
+// LIGHT THEME ANIMATION — orange/yellow glowing spheres
+// ============================================================
+(function() {
+  const canvas = document.getElementById('light-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  const DROPS = [
+    { ox:0.05, r:0.14, col:[255,140,0],  sp:0.00028, ph:0.0,  amp:0.04, pageY:0.08 },
+    { ox:0.92, r:0.10, col:[255,180,20], sp:0.00038, ph:1.5,  amp:0.035,pageY:0.18 },
+    { ox:0.88, r:0.16, col:[255,110,0],  sp:0.00032, ph:2.8,  amp:0.042,pageY:0.30 },
+    { ox:0.06, r:0.09, col:[255,160,0],  sp:0.00044, ph:0.9,  amp:0.038,pageY:0.42 },
+    { ox:0.90, r:0.13, col:[255,200,30], sp:0.00036, ph:3.6,  amp:0.040,pageY:0.53 },
+    { ox:0.07, r:0.11, col:[255,120,0],  sp:0.00042, ph:5.0,  amp:0.036,pageY:0.63 },
+    { ox:0.89, r:0.12, col:[255,170,10], sp:0.00030, ph:2.2,  amp:0.038,pageY:0.74 },
+    { ox:0.05, r:0.085,col:[255,100,0],  sp:0.00046, ph:4.4,  amp:0.034,pageY:0.84 },
+    { ox:0.91, r:0.10, col:[255,190,25], sp:0.00034, ph:1.1,  amp:0.037,pageY:0.93 },
+  ];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function drawGlow(cx, cy, radius, rgb, alpha) {
+    if (alpha < 0.01 || radius < 2) return;
+    const [r,g,b] = rgb;
+    const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+    grd.addColorStop(0,   `rgba(${r},${g},${b},${(alpha*0.55).toFixed(3)})`);
+    grd.addColorStop(0.25,`rgba(${r},${g},${b},${(alpha*0.30).toFixed(3)})`);
+    grd.addColorStop(0.55,`rgba(${r},${g},${b},${(alpha*0.10).toFixed(3)})`);
+    grd.addColorStop(1,   `rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI*2);
+    ctx.fillStyle = grd; ctx.fill();
+    // bright core
+    const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius*0.15);
+    core.addColorStop(0, `rgba(${r},${g},${b},${(alpha*0.70).toFixed(3)})`);
+    core.addColorStop(1, `rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(cx, cy, radius*0.15, 0, Math.PI*2);
+    ctx.fillStyle = core; ctx.fill();
+  }
+
+  function animate(t) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'multiply';
+
+    const scrollY = window.scrollY;
+    const pageH   = Math.max(document.body.scrollHeight, H * 3);
+    const heroP   = Math.min(1, scrollY / (H * 0.65));
+    const ease    = heroP < 0.5 ? 2*heroP*heroP : -1+(4-2*heroP)*heroP;
+
+    // Big central sphere on hero
+    if (ease < 0.99) {
+      const a = (1 - ease) * 0.92;
+      const bigR = (0.44 - ease * 0.30) * Math.min(W, H);
+      const pulse = 1 + Math.sin(t * 0.00065) * 0.022;
+      const [r,g,b] = [255, 110, 0];
+      const cx = W*0.5, cy = H*0.37;
+      // Outer glow
+      const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, bigR*pulse);
+      grd.addColorStop(0,    `rgba(${r},${g},${b},${(a*0.72).toFixed(3)})`);
+      grd.addColorStop(0.20, `rgba(${r},${g},${b},${(a*0.45).toFixed(3)})`);
+      grd.addColorStop(0.45, `rgba(${r},${g},${b},${(a*0.18).toFixed(3)})`);
+      grd.addColorStop(0.70, `rgba(${r},${g},${b},${(a*0.05).toFixed(3)})`);
+      grd.addColorStop(1,    `rgba(${r},${g},${b},0)`);
+      ctx.beginPath(); ctx.arc(cx, cy, bigR*pulse, 0, Math.PI*2);
+      ctx.fillStyle = grd; ctx.fill();
+      // Bright core
+      const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, bigR*0.18);
+      core.addColorStop(0, `rgba(255,180,60,${(a*0.85).toFixed(3)})`);
+      core.addColorStop(1, `rgba(255,130,0,0)`);
+      ctx.beginPath(); ctx.arc(cx, cy, bigR*0.18, 0, Math.PI*2);
+      ctx.fillStyle = core; ctx.fill();
+    }
+
+    DROPS.forEach(p => {
+      const screenY = p.pageY * pageH - scrollY;
+      const dist = Math.abs(screenY - H * 0.5);
+      const vis  = Math.max(0, 1 - dist / (H * 1.2));
+      if (vis < 0.01) return;
+      const fx = Math.sin(t * p.sp + p.ph) * p.amp * W;
+      const fy = Math.cos(t * p.sp * 0.72 + p.ph * 1.35) * p.amp * 0.5 * H;
+      const pAlpha = scrollY < H * 0.15 ? ease * vis * 1.0 : vis * 1.0;
+      drawGlow(p.ox * W + fx, screenY + fy, p.r * Math.min(W, H), p.col, pAlpha);
+    });
+
+    ctx.globalCompositeOperation = 'source-over';
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(animate);
+})();
+
+// ============================================================
+// SPHERE SYSTEM — big hero + ambient particles on all screens
+// ============================================================
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let W, H;
+
+  // Ambient particles spread across full page height
+  // ox/oy = fractional position (x in viewport, y in page)
+  const PARTICLES = [
+    { ox:0.08, r:0.10, col:[255,88,0],   sp:0.00032, ph:0.0,  amp:0.050, pageY:0.10 },
+    { ox:0.90, r:0.07, col:[200,130,30],  sp:0.00045, ph:1.2,  amp:0.038, pageY:0.20 },
+    { ox:0.85, r:0.11, col:[255,55,0],    sp:0.00038, ph:2.4,  amp:0.044, pageY:0.32 },
+    { ox:0.07, r:0.065,col:[255,110,0],   sp:0.00055, ph:0.8,  amp:0.033, pageY:0.42 },
+    { ox:0.92, r:0.09, col:[200,95,15],   sp:0.00042, ph:3.1,  amp:0.042, pageY:0.54 },
+    { ox:0.10, r:0.075,col:[255,75,0],    sp:0.00050, ph:1.9,  amp:0.036, pageY:0.64 },
+    { ox:0.88, r:0.085,col:[230,100,20],  sp:0.00036, ph:4.2,  amp:0.040, pageY:0.75 },
+    { ox:0.06, r:0.06, col:[255,65,0],    sp:0.00048, ph:5.0,  amp:0.034, pageY:0.85 },
+    { ox:0.91, r:0.095,col:[255,90,0],    sp:0.00040, ph:2.8,  amp:0.038, pageY:0.93 },
+  ];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function drawGlow(cx, cy, radius, rgb, alpha) {
+    if (alpha < 0.01 || radius < 2) return;
+    const [r,g,b] = rgb;
+    const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
+    grd.addColorStop(0,    `rgba(${r},${g},${b},${Math.min(alpha*0.88,1).toFixed(3)})`);
+    grd.addColorStop(0.22, `rgba(${r},${g},${b},${(alpha*0.50).toFixed(3)})`);
+    grd.addColorStop(0.50, `rgba(${r},${g},${b},${(alpha*0.14).toFixed(3)})`);
+    grd.addColorStop(0.80, `rgba(${r},${g},${b},${(alpha*0.03).toFixed(3)})`);
+    grd.addColorStop(1,    `rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(cx, cy, radius, 0, Math.PI*2);
+    ctx.fillStyle = grd; ctx.fill();
+    const core = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius*0.13);
+    core.addColorStop(0, `rgba(${r},${g},${b},${(alpha*0.42).toFixed(3)})`);
+    core.addColorStop(1, `rgba(${r},${g},${b},0)`);
+    ctx.beginPath(); ctx.arc(cx, cy, radius*0.13, 0, Math.PI*2);
+    ctx.fillStyle = core; ctx.fill();
+  }
+
+  function animate(t) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'screen';
+
+    const scrollY  = window.scrollY;
+    const pageH    = Math.max(document.body.scrollHeight, H * 3);
+    const heroProgress = Math.min(1, scrollY / (H * 0.65));
+    const ease     = heroProgress < 0.5 ? 2*heroProgress*heroProgress : -1+(4-2*heroProgress)*heroProgress;
+
+    // ── BIG CENTRAL SPHERE (hero, fades on scroll)
+    if (ease < 0.99) {
+      const alpha = (1 - ease) * 0.82;
+      const bigR  = (0.44 - ease * 0.30) * Math.min(W, H);
+      const pulse = 1 + Math.sin(t * 0.00065) * 0.022;
+      const cx = W * 0.50;
+      const cy = H * (0.37 + Math.sin(t * 0.00027) * 0.020);
+      drawGlow(cx, cy, bigR * pulse, [255, 70, 0], alpha);
+      drawGlow(cx, cy, bigR * pulse * 1.65, [200, 82, 5], alpha * 0.20);
+    }
+
+    // ── AMBIENT PARTICLES — scattered across full page
+    PARTICLES.forEach(p => {
+      // Convert page-relative Y to screen Y
+      const absY   = p.pageY * pageH;
+      const screenY = absY - scrollY;
+      // Visibility window: fade in/out within 1.5 viewports
+      const dist   = Math.abs(screenY - H * 0.5);
+      const vis    = Math.max(0, 1 - dist / (H * 1.2));
+      if (vis < 0.01) return;
+
+      const fx = Math.sin(t * p.sp + p.ph) * p.amp * W;
+      const fy = Math.cos(t * p.sp * 0.75 + p.ph * 1.4) * p.amp * 0.55 * H;
+      const cx = p.ox * W + fx;
+      const cy = screenY + fy;
+      const radius = p.r * Math.min(W, H);
+
+      // Above-fold: fade in as hero sphere disappears
+      const pAlpha = scrollY < H * 0.15
+        ? ease * vis * 0.62
+        : vis * 0.62;
+
+      drawGlow(cx, cy, radius, p.col, pAlpha);
+    });
+
+    ctx.globalCompositeOperation = 'source-over';
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(animate);
+})();
+
+
+// GALLERY DRAG SCROLL
+(function() {
+  const wrap = document.querySelector('.gal-scroll-wrap');
+  if (!wrap) return;
+  let isDown = false, startX, scrollLeft;
+  wrap.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft; });
+  wrap.addEventListener('mouseleave', () => isDown = false);
+  wrap.addEventListener('mouseup', () => isDown = false);
+  wrap.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - wrap.offsetLeft;
+    wrap.scrollLeft = scrollLeft - (x - startX) * 1.2;
+  });
+})();
+
+// NAV SCROLL SHADOW
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('.nav');
+  if (window.scrollY > 30) nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+  else nav.style.borderBottomColor = '';
+});
+
+// THEME TOGGLE
+function toggleTheme() {
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  localStorage.setItem('update-theme', isLight ? 'dark' : 'light');
+}
+// Restore saved theme
+(function() {
+  const saved = localStorage.getItem('update-theme');
+  if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+})();
+
+// MOBILE MENU
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const btn  = document.getElementById('hamburger');
+  const isOpen = menu.classList.toggle('open');
+  btn.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+// Close menu on outside click
+document.addEventListener('click', e => {
+  const menu = document.getElementById('mobile-menu');
+  const btn  = document.getElementById('hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+
+// LANGUAGE
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.remove('active');
+    if (el.getAttribute('data-lang') === lang) el.classList.add('active');
+  });
+  document.documentElement.lang = lang;
+}
+
+// SCROLL REVEAL
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.07, rootMargin: '0px 0px -36px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+// Stagger grid items
+document.querySelectorAll('.svc-grid .svc-card, .rev-grid .rev-card, .spec-grid .spec-card').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.07}s`;
+  el.classList.add('reveal');
+  io.observe(el);
+});
+
+// ACCORDION
+function togglePa(id) {
+  const item = document.getElementById(id);
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.pa-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+// Default open first
+document.getElementById('pa-massage').classList.add('open');
+
+// EXPAND TEAM DESC
+function toggleDesc(btn) {
+  const desc = btn.previousElementSibling.querySelector('.team-desc');
+  const isOpen = desc.classList.toggle('open');
+  const langRu = btn.querySelector('[data-lang="ru"]');
+  const langEn = btn.querySelector('[data-lang="en"]');
+  const langKa = btn.querySelector('[data-lang="ka"]');
+  if (langRu) langRu.textContent = isOpen ? 'Свернуть ↑' : 'Подробнее ↓';
+  if (langEn) langEn.textContent = isOpen ? 'Less ↑' : 'Read more ↓';
+  if (langKa) langKa.textContent = isOpen ? 'ნაკლები ↑' : 'მეტი ↓';
+}
+
+// ===== TEAM CAROUSEL =====
+(function() {
+  const track = document.getElementById('team-track');
+  const wrap  = document.getElementById('team-track-wrap');
+  const prev  = document.getElementById('team-prev');
+  const next  = document.getElementById('team-next');
+  const dotsEl = document.getElementById('team-dots');
+  const cards = track.querySelectorAll('.team-card');
+
+  let current = 0;
+  let cardW = 0;
+  let visible = 1;
+  let maxIndex = 0;
+
+  function getCardW() {
+    return cards[0].offsetWidth + 20; // card + gap
+  }
+
+  function getVisible() {
+    const w = wrap.offsetWidth;
+    if (w >= 1000) return 3;
+    if (w >= 640)  return 2;
+    return 1;
+  }
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    for (let i = 0; i <= maxIndex; i++) {
+      const d = document.createElement('button');
+      d.className = 'team-dot' + (i === current ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    }
+  }
+
+  function updateDots() {
+    dotsEl.querySelectorAll('.team-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIndex));
+    track.style.transform = `translateX(-${current * getCardW()}px)`;
+    prev.disabled = current === 0;
+    next.disabled = current === maxIndex;
+    updateDots();
+  }
+
+  function recalc() {
+    cardW   = getCardW();
+    visible = getVisible();
+    maxIndex = Math.max(0, cards.length - visible);
+    if (current > maxIndex) current = maxIndex;
+    buildDots();
+    goTo(current);
+  }
+
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+
+  // Touch / drag swipe
+  let startX = 0, isDragging = false, dragDist = 0;
+
+  wrap.addEventListener('pointerdown', e => {
+    startX = e.clientX;
+    isDragging = true;
+    dragDist = 0;
+    track.style.transition = 'none';
+  });
+  wrap.addEventListener('pointermove', e => {
+    if (!isDragging) return;
+    dragDist = e.clientX - startX;
+    track.style.transform = `translateX(${-current * getCardW() + dragDist}px)`;
+  });
+  wrap.addEventListener('pointerup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = '';
+    if (dragDist < -60) goTo(current + 1);
+    else if (dragDist > 60) goTo(current - 1);
+    else goTo(current);
+  });
+  wrap.addEventListener('pointerleave', () => {
+    if (isDragging) { isDragging = false; track.style.transition = ''; goTo(current); }
+  });
+
+  // Prevent link clicks during swipe
+  wrap.addEventListener('click', e => {
+    if (Math.abs(dragDist) > 8) e.preventDefault();
+  }, true);
+
+  window.addEventListener('resize', recalc);
+  recalc();
+})();
+
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const s = window.pageYOffset;
+      const h = document.querySelector('#hero');
+      if (h && s < window.innerHeight) h.style.transform = `translateY(${s * 0.28}px)`;
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// MUSIC PLAYER — autoplay on load, button toggles pause/resume
+(function() {
+  var audio = document.getElementById('music-audio');
+  var btn   = document.getElementById('music-btn');
+  if (!audio || !btn) return;
+
+  audio.volume = 0.35;
+
+  // Try autoplay immediately
+  function tryPlay() {
+    var p = audio.play();
+    if (p !== undefined) {
+      p.catch(function() {
+        // Autoplay blocked — wait for first user interaction
+        document.addEventListener('click', function resume() {
+          audio.play();
+          document.removeEventListener('click', resume);
+        }, { once: true });
+      });
+    }
+  }
+  tryPlay();
+})();
+
+function toggleMusic() {
+  var audio = document.getElementById('music-audio');
+  var btn   = document.getElementById('music-btn');
+  if (!audio) return;
+  if (audio.paused) {
+    audio.play();
+    btn.classList.remove('paused');
+    btn.setAttribute('title', 'Выключить музыку');
+  } else {
+    audio.pause();
+    btn.classList.add('paused');
+    btn.setAttribute('title', 'Включить музыку');
+  }
+}
+
+</script>
+</body>
+
+</html>
